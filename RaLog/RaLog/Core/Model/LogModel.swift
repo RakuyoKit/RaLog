@@ -11,7 +11,9 @@ import Foundation
 /// Model for storing log
 open class LogModel: Codable {
     
-    public init(_ log: Any?, fileName: String, methodName: String, line: Int, flag: LogFlag, module: String) {
+    public typealias Flag = String
+    
+    public init(_ log: Any?, fileName: String, methodName: String, line: Int, flag: Flag, module: String) {
         
         self.log = log
         self.methodName = methodName
@@ -46,7 +48,7 @@ open class LogModel: Codable {
     open var line: Int
     
     /// Flag of log
-    open var flag: LogFlag
+    open var flag: Flag
     
     /// The module to which the log belongs
     open var module: String
