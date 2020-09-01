@@ -16,5 +16,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { .default }
 }
 
