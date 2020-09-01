@@ -1,0 +1,846 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AF919DD22FD264800D063BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919DC22FD264800D063BD /* AppDelegate.swift */; };
+		3AF919DF22FD264800D063BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919DE22FD264800D063BD /* ViewController.swift */; };
+		3AF919E222FD264800D063BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF919E022FD264800D063BD /* Main.storyboard */; };
+		3AF919E422FD264900D063BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF919E322FD264900D063BD /* Assets.xcassets */; };
+		3AF919E722FD264900D063BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF919E522FD264900D063BD /* LaunchScreen.storyboard */; };
+		3AF919F222FD264900D063BD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919F122FD264900D063BD /* Tests.swift */; };
+		3AF919FD22FD264900D063BD /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919FC22FD264900D063BD /* UITests.swift */; };
+		3AF91CD622FD5C0B00D063BD /* push.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3AF91CD522FD5C0B00D063BD /* push.sh */; };
+		3AF91CDC22FD5D5E00D063BD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF91CDB22FD5D5E00D063BD /* Register.swift */; };
+		3AFDB1D6236AAA8700AF5F29 /* RaLog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */; };
+		A034732A3FE14C11187E3CA4 /* Pods_RaLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AF919EE22FD264900D063BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AF919D122FD264800D063BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AF919D822FD264800D063BD;
+			remoteInfo = RaLog;
+		};
+		3AF919F922FD264900D063BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AF919D122FD264800D063BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AF919D822FD264800D063BD;
+			remoteInfo = RaLog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AF919D922FD264800D063BD /* RaLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF919DC22FD264800D063BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AF919DE22FD264800D063BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AF919E122FD264800D063BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AF919E322FD264900D063BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AF919E622FD264900D063BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AF919E822FD264900D063BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF919ED22FD264900D063BD /* RaLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF919F122FD264900D063BD /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		3AF919F322FD264900D063BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF919F822FD264900D063BD /* RaLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF919FC22FD264900D063BD /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		3AF919FE22FD264900D063BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF91CD522FD5C0B00D063BD /* push.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = push.sh; sourceTree = SOURCE_ROOT; };
+		3AF91CDB22FD5D5E00D063BD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = RaLog.podspec; sourceTree = SOURCE_ROOT; };
+		3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.debug.xcconfig"; path = "Target Support Files/Pods-RaLog/Pods-RaLog.debug.xcconfig"; sourceTree = "<group>"; };
+		41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		618E1C68AC78F62A4654B8F9 /* Pods-RaLog.mbdev_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.mbdev_debug.xcconfig"; path = "Target Support Files/Pods-RaLog/Pods-RaLog.mbdev_debug.xcconfig"; sourceTree = "<group>"; };
+		81ECAEBCB60EEB3A86A81C9F /* Pods-RaLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.release.xcconfig"; path = "Target Support Files/Pods-RaLog/Pods-RaLog.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AF919D622FD264800D063BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A034732A3FE14C11187E3CA4 /* Pods_RaLog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF919EA22FD264900D063BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF919F522FD264900D063BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BEF580B624E808A1FA3FB14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AF919D022FD264800D063BD = {
+			isa = PBXGroup;
+			children = (
+				3AF919DB22FD264800D063BD /* RaLog */,
+				3AF919F022FD264900D063BD /* RaLogTests */,
+				3AF919FB22FD264900D063BD /* RaLogUITests */,
+				3AF919DA22FD264800D063BD /* Products */,
+				4C0EF218BD2854A91A8C086B /* Pods */,
+				2BEF580B624E808A1FA3FB14 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3AF919DA22FD264800D063BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AF919D922FD264800D063BD /* RaLog.app */,
+				3AF919ED22FD264900D063BD /* RaLogTests.xctest */,
+				3AF919F822FD264900D063BD /* RaLogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AF919DB22FD264800D063BD /* RaLog */ = {
+			isa = PBXGroup;
+			children = (
+				3AF91CD522FD5C0B00D063BD /* push.sh */,
+				3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */,
+				3AF91A0E22FD266E00D063BD /* Core */,
+				3AF91A0D22FD266900D063BD /* Router */,
+				3AF91A0C22FD265F00D063BD /* Other */,
+			);
+			path = RaLog;
+			sourceTree = "<group>";
+		};
+		3AF919F022FD264900D063BD /* RaLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AF919F122FD264900D063BD /* Tests.swift */,
+				3AF919F322FD264900D063BD /* Info.plist */,
+			);
+			path = RaLogTests;
+			sourceTree = "<group>";
+		};
+		3AF919FB22FD264900D063BD /* RaLogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3AF919FC22FD264900D063BD /* UITests.swift */,
+				3AF919FE22FD264900D063BD /* Info.plist */,
+			);
+			path = RaLogUITests;
+			sourceTree = "<group>";
+		};
+		3AF91A0C22FD265F00D063BD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3AF919DC22FD264800D063BD /* AppDelegate.swift */,
+				3AF919DE22FD264800D063BD /* ViewController.swift */,
+				3AF919E022FD264800D063BD /* Main.storyboard */,
+				3AF919E322FD264900D063BD /* Assets.xcassets */,
+				3AF919E522FD264900D063BD /* LaunchScreen.storyboard */,
+				3AF919E822FD264900D063BD /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		3AF91A0D22FD266900D063BD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3AF91CDB22FD5D5E00D063BD /* Register.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3AF91A0E22FD266E00D063BD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4C0EF218BD2854A91A8C086B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */,
+				618E1C68AC78F62A4654B8F9 /* Pods-RaLog.mbdev_debug.xcconfig */,
+				81ECAEBCB60EEB3A86A81C9F /* Pods-RaLog.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AF919D822FD264800D063BD /* RaLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF91A0122FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLog" */;
+			buildPhases = (
+				BF64FAA68F372DF372AD3766 /* [CP] Check Pods Manifest.lock */,
+				3AF919D522FD264800D063BD /* Sources */,
+				3AF919D622FD264800D063BD /* Frameworks */,
+				3AF919D722FD264800D063BD /* Resources */,
+				BE676E4668273D2AB9291FA8 /* [CP] Embed Pods Frameworks */,
+				C9FD7CD2B78093304E158CFB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaLog;
+			productName = RaLog;
+			productReference = 3AF919D922FD264800D063BD /* RaLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AF919EC22FD264900D063BD /* RaLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF91A0422FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLogTests" */;
+			buildPhases = (
+				3AF919E922FD264900D063BD /* Sources */,
+				3AF919EA22FD264900D063BD /* Frameworks */,
+				3AF919EB22FD264900D063BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AF919EF22FD264900D063BD /* PBXTargetDependency */,
+			);
+			name = RaLogTests;
+			productName = RaLogTests;
+			productReference = 3AF919ED22FD264900D063BD /* RaLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3AF919F722FD264900D063BD /* RaLogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF91A0722FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLogUITests" */;
+			buildPhases = (
+				3AF919F422FD264900D063BD /* Sources */,
+				3AF919F522FD264900D063BD /* Frameworks */,
+				3AF919F622FD264900D063BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AF919FA22FD264900D063BD /* PBXTargetDependency */,
+			);
+			name = RaLogUITests;
+			productName = RaLogUITests;
+			productReference = 3AF919F822FD264900D063BD /* RaLogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AF919D122FD264800D063BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = Rakuyo;
+				TargetAttributes = {
+					3AF919D822FD264800D063BD = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					3AF919EC22FD264900D063BD = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 3AF919D822FD264800D063BD;
+					};
+					3AF919F722FD264900D063BD = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 3AF919D822FD264800D063BD;
+					};
+				};
+			};
+			buildConfigurationList = 3AF919D422FD264800D063BD /* Build configuration list for PBXProject "RaLog" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3AF919D022FD264800D063BD;
+			productRefGroup = 3AF919DA22FD264800D063BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AF919D822FD264800D063BD /* RaLog */,
+				3AF919EC22FD264900D063BD /* RaLogTests */,
+				3AF919F722FD264900D063BD /* RaLogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AF919D722FD264800D063BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF91CD622FD5C0B00D063BD /* push.sh in Resources */,
+				3AF919E722FD264900D063BD /* LaunchScreen.storyboard in Resources */,
+				3AF919E422FD264900D063BD /* Assets.xcassets in Resources */,
+				3AF919E222FD264800D063BD /* Main.storyboard in Resources */,
+				3AFDB1D6236AAA8700AF5F29 /* RaLog.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF919EB22FD264900D063BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF919F622FD264900D063BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BE676E4668273D2AB9291FA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF64FAA68F372DF372AD3766 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RaLog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9FD7CD2B78093304E158CFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AF919D522FD264800D063BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF91CDC22FD5D5E00D063BD /* Register.swift in Sources */,
+				3AF919DF22FD264800D063BD /* ViewController.swift in Sources */,
+				3AF919DD22FD264800D063BD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF919E922FD264900D063BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF919F222FD264900D063BD /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF919F422FD264900D063BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF919FD22FD264900D063BD /* UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AF919EF22FD264900D063BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AF919D822FD264800D063BD /* RaLog */;
+			targetProxy = 3AF919EE22FD264900D063BD /* PBXContainerItemProxy */;
+		};
+		3AF919FA22FD264900D063BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AF919D822FD264800D063BD /* RaLog */;
+			targetProxy = 3AF919F922FD264900D063BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3AF919E022FD264800D063BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF919E122FD264800D063BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AF919E522FD264900D063BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF919E622FD264900D063BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A9E340B23766DD900D6B741 /* MBDev_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited) MBCORE_MBDEV=1";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = MBDev_Debug;
+		};
+		3A9E340C23766DD900D6B741 /* MBDev_Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618E1C68AC78F62A4654B8F9 /* Pods-RaLog.mbdev_debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = "$(SRCROOT)/RaLog/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = MBDev_Debug;
+		};
+		3A9E340D23766DD900D6B741 /* MBDev_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = RaLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaLog.app/RaLog";
+			};
+			name = MBDev_Debug;
+		};
+		3A9E340E23766DD900D6B741 /* MBDev_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = RaLogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaLog;
+			};
+			name = MBDev_Debug;
+		};
+		3AF919FF22FD264900D063BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3AF91A0022FD264900D063BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AF91A0222FD264900D063BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = "$(SRCROOT)/RaLog/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AF91A0322FD264900D063BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81ECAEBCB60EEB3A86A81C9F /* Pods-RaLog.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = "$(SRCROOT)/RaLog/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3AF91A0522FD264900D063BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = RaLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaLog.app/RaLog";
+			};
+			name = Debug;
+		};
+		3AF91A0622FD264900D063BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = RaLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaLog.app/RaLog";
+			};
+			name = Release;
+		};
+		3AF91A0822FD264900D063BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = RaLogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaLog;
+			};
+			name = Debug;
+		};
+		3AF91A0922FD264900D063BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Q8TLD2828;
+				INFOPLIST_FILE = RaLogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaLog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AF919D422FD264800D063BD /* Build configuration list for PBXProject "RaLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF919FF22FD264900D063BD /* Debug */,
+				3A9E340B23766DD900D6B741 /* MBDev_Debug */,
+				3AF91A0022FD264900D063BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AF91A0122FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF91A0222FD264900D063BD /* Debug */,
+				3A9E340C23766DD900D6B741 /* MBDev_Debug */,
+				3AF91A0322FD264900D063BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AF91A0422FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF91A0522FD264900D063BD /* Debug */,
+				3A9E340D23766DD900D6B741 /* MBDev_Debug */,
+				3AF91A0622FD264900D063BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AF91A0722FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF91A0822FD264900D063BD /* Debug */,
+				3A9E340E23766DD900D6B741 /* MBDev_Debug */,
+				3AF91A0922FD264900D063BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AF919D122FD264800D063BD /* Project object */;
+}
