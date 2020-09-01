@@ -24,6 +24,7 @@ open class Log: Codable, Printable, Storable, Filterable {
         self.line = line
         self.flag = flag
         
+        self.safeLog = "\(log ?? "nil")"
         self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
         
         if _fastPath(file.contains("/")) {
@@ -49,8 +50,6 @@ open class Log: Codable, Printable, Storable, Filterable {
             self.file = file
             self.module = module ?? "RaLog"
         }
-        
-        self.safeLog = "\(log ?? "nil")"
     }
     
     /// The actual content to be printed
