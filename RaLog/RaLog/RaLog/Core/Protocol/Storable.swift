@@ -31,7 +31,7 @@ public struct StorageMode: OptionSet {
 
 // MARK: - Protocol
 
-/// Used to store logs
+/// Provide the ability to store logs
 public protocol Storable {
     
     /// Storage mode, the default is `.all`. Namely disk cache and memory cache
