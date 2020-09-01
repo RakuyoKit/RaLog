@@ -63,7 +63,7 @@ public extension Printable {
         
         // 2. filter
         if let filterable = self as? Filterable.Type, _slowPath(filterable.filter(log)) { /* do nothing */ } else {
-            Swift.print(log.logedStr ?? "The `logedStr` variable is nil when print, please check!")
+            Swift.print(log.logedStr)
         }
         
         #endif

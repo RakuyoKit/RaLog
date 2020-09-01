@@ -60,7 +60,7 @@ open class LogModel: Codable {
     public let formatTime: String
     
     /// What actually printed.
-    open var logedStr: String!
+    open var logedStr: String = ""
 }
 
 private extension LogModel {
