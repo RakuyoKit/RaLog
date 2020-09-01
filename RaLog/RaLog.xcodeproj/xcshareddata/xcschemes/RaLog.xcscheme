@@ -47,16 +47,6 @@
                ReferencedContainer = "container:RaLog.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AF919F722FD264900D063BD"
-               BuildableName = "RaLogUITests.xctest"
-               BlueprintName = "RaLogUITests"
-               ReferencedContainer = "container:RaLog.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -16,8 +16,6 @@ install! 'cocoapods',
 
 target 'RaLog' do
   
-  project 'RaLog/RaLog.xcodeproj'
-  
   
   
 end
