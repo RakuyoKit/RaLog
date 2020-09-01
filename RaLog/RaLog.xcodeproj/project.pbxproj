@@ -84,32 +84,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3AE8770B24FDD8E100A862BE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3AE8770E24FDD96300A862BE /* Log.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3AE8771024FDDCC000A862BE /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				3AE87B1D24FDF2DA00A862BE /* Printable.swift */,
-				3AE8771324FDDCE700A862BE /* Storable.swift */,
-				3AE87B1B24FDF02300A862BE /* Filterable.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		3AE8810F24FDFE5400A862BE /* BuiltIn */ = {
-			isa = PBXGroup;
-			children = (
-				3AE882F424FE0EFB00A862BE /* Flag.swift */,
-			);
-			path = BuiltIn;
-			sourceTree = "<group>";
-		};
 		3AF919D022FD264800D063BD = {
 			isa = PBXGroup;
 			children = (
@@ -166,9 +140,11 @@
 		3AF91A0E22FD266E00D063BD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3AE8770B24FDD8E100A862BE /* Model */,
-				3AE8771024FDDCC000A862BE /* Protocol */,
-				3AE8810F24FDFE5400A862BE /* BuiltIn */,
+				3AE87B1D24FDF2DA00A862BE /* Printable.swift */,
+				3AE8771324FDDCE700A862BE /* Storable.swift */,
+				3AE87B1B24FDF02300A862BE /* Filterable.swift */,
+				3AE8770E24FDD96300A862BE /* Log.swift */,
+				3AE882F424FE0EFB00A862BE /* Flag.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
