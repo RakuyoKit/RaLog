@@ -13,13 +13,13 @@ open class Log: Codable {
     
     public typealias Flag = String
     
-    public init(_ log: Any?, fileName: String, methodName: String, line: Int, flag: Flag, module: String) {
+    public init(_ log: Any?, fileName: String, methodName: String, line: Int, flag: Flag, module: String? = nil) {
         
         self.log = log
         self.methodName = methodName
         self.line = line
         self.flag = flag
-        self.module = module
+        self.module = module ?? "RaLog"
         
         self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
         
