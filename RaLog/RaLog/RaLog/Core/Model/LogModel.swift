@@ -99,13 +99,11 @@ extension LogModel: Equatable {
     public static func == (lhs: LogModel, rhs: LogModel) -> Bool {
         
         // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`
-        return lhs.timestamp  == rhs.timestamp
-            && lhs.line       == rhs.line
-            && lhs.safeLog    == rhs.safeLog
-            && lhs.fileName   == rhs.fileName
-            && lhs.formatTime == rhs.formatTime
-            && lhs.module     == rhs.module
-            && lhs.logedStr   == rhs.logedStr
+        return lhs.timestamp == rhs.timestamp
+            && lhs.line      == rhs.line
+            && lhs.fileName  == rhs.fileName
+            && lhs.safeLog   == rhs.safeLog
+            && lhs.logedStr  == rhs.logedStr
     }
 }
 
