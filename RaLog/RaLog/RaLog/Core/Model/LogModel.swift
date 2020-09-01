@@ -59,7 +59,7 @@ open class LogModel: Codable {
     /// `timestamp` after formatting with `HH:mm:ss:SSS`
     public let formatTime: String
     
-    /// What actually printed
+    /// What actually printed.
     open var logedStr: String!
 }
 

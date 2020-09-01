@@ -29,8 +29,11 @@ public protocol Printable {
     /// 3. Determine whether to store the log
     /// 4. Return the log model
     ///
+    /// - Attention:
+    ///     The first and second steps mentioned above are only effective in `DEBUG` mode. This means that the value of `logedStr` is meaningful only in `DEBUG` mode. You can change the implementation, for example, let it perform the same operation in `RELEASE` mode
+    ///
     /// - Parameter log: The Log model contains all the information needed to print the Log. See `LogModel` for details
-    /// - Returns: log model that `logedStr` must have a value
+    /// - Returns: log model
     @inline(__always) @discardableResult
     static func print(_ log: LogModel) -> LogModel
 }
@@ -55,21 +58,22 @@ public extension Printable {
         
         #if DEBUG
         
-        // store format log
+        // 1. store format log
         log.logedStr = self.format(log)
         
-        // filter
+        // 2. filter
         if let filterable = self as? Filterable.Type, _slowPath(filterable.filter(log)) { /* do nothing */ } else {
             Swift.print(log.logedStr ?? "The `logedStr` variable is nil when print, please check!")
         }
         
         #endif
         
-        // store
+        // 3. store
         if let storable = self as? Storable.Type {
             storable.store(log)
         }
         
+        // 4. return
         return log
     }
 }
