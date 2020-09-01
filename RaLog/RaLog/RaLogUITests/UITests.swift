@@ -1,9 +1,9 @@
 //
 //  UITests.swift
-//  MBCore
+//  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 com.mbcore. All rights reserved.
+//  Copyright © 2020 Rakuyo. All rights reserved.
 //
 
 import XCTest

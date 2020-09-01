@@ -7,17 +7,17 @@ Pod::Spec.new do |s|
   
   s.version          = '1.0.0'
   
-  s.summary          = 'MBCore iOS 。'
+  s.summary          = ''
   
-  s.description      = 'MBCore iOS 。'
+  s.description      = ''
   
-  s.homepage         = 'https://git.pettyb.com/iOSModule/RaLog'
+  s.homepage         = 'https://github.com/rakuyoMo/RaLog'
   
   s.license          = 'MIT'
   
-  s.author           = { 'Rakuyo' => 'wugaoyu@mbcore.com' }
+  s.author           = { 'Rakuyo' => 'rakuyo.mo@gmail.com' }
   
-  s.source           = { :git => 'https://git.pettyb.com/iOSModule/RaLog.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/rakuyoMo/RaLog.git', :tag => s.version.to_s }
   
   s.requires_arc     = true
   
@@ -29,8 +29,6 @@ Pod::Spec.new do |s|
   
   s.module_name      = 'RaLog'
   
-  s.source_files     = 'RaLog/RaLog/Core/*', 'RaLog/RaLog/Router/*'
-  
-  s.dependency 'RaLogRouter', '>= 1.0.0-Router'
+  s.source_files     = 'RaLog/RaLog/Core/*'
   
 end

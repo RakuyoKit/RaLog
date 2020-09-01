@@ -15,7 +15,6 @@
 		3AF919F222FD264900D063BD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919F122FD264900D063BD /* Tests.swift */; };
 		3AF919FD22FD264900D063BD /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919FC22FD264900D063BD /* UITests.swift */; };
 		3AF91CD622FD5C0B00D063BD /* push.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3AF91CD522FD5C0B00D063BD /* push.sh */; };
-		3AF91CDC22FD5D5E00D063BD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF91CDB22FD5D5E00D063BD /* Register.swift */; };
 		3AFDB1D6236AAA8700AF5F29 /* RaLog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */; };
 		A034732A3FE14C11187E3CA4 /* Pods_RaLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +51,6 @@
 		3AF919FC22FD264900D063BD /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		3AF919FE22FD264900D063BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AF91CD522FD5C0B00D063BD /* push.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = push.sh; sourceTree = SOURCE_ROOT; };
-		3AF91CDB22FD5D5E00D063BD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = RaLog.podspec; sourceTree = SOURCE_ROOT; };
 		3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.debug.xcconfig"; path = "Target Support Files/Pods-RaLog/Pods-RaLog.debug.xcconfig"; sourceTree = "<group>"; };
 		41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +120,6 @@
 				3AF91CD522FD5C0B00D063BD /* push.sh */,
 				3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */,
 				3AF91A0E22FD266E00D063BD /* Core */,
-				3AF91A0D22FD266900D063BD /* Router */,
 				3AF91A0C22FD265F00D063BD /* Other */,
 			);
 			path = RaLog;
@@ -159,14 +156,6 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		3AF91A0D22FD266900D063BD /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				3AF91CDB22FD5D5E00D063BD /* Register.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		3AF91A0E22FD266E00D063BD /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,8 +185,6 @@
 				3AF919D522FD264800D063BD /* Sources */,
 				3AF919D622FD264800D063BD /* Frameworks */,
 				3AF919D722FD264800D063BD /* Resources */,
-				BE676E4668273D2AB9291FA8 /* [CP] Embed Pods Frameworks */,
-				C9FD7CD2B78093304E158CFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,23 +304,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BE676E4668273D2AB9291FA8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BF64FAA68F372DF372AD3766 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,23 +326,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C9FD7CD2B78093304E158CFB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaLog/Pods-RaLog-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -380,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF91CDC22FD5D5E00D063BD /* Register.swift in Sources */,
 				3AF919DF22FD264800D063BD /* ViewController.swift in Sources */,
 				3AF919DD22FD264800D063BD /* AppDelegate.swift in Sources */,
 			);
@@ -511,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,7 +640,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -708,7 +660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

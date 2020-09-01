@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  MBCore
+//  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 com.mbcore. All rights reserved.
+//  Copyright © 2020 Rakuyo. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        
         return true
     }
 

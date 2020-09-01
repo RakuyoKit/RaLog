@@ -5,9 +5,6 @@
       location = "group:RaLog/RaLog.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RaLogRouter/RaLogRouter.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

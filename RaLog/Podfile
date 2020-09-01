@@ -1,5 +1,3 @@
-source 'https://git.pettyb.com/iOSBasic/Space.git'
-source 'https://git.pettyb.com/iOSUniversal/Space.git'
 source 'https://cdn.cocoapods.org/'
 
 workspace 'RaLog.xcworkspace'
@@ -20,18 +18,6 @@ target 'RaLog' do
   
   project 'RaLog/RaLog.xcodeproj'
   
-  pod 'MBCExtension'
-  pod 'MBCHelper'
-  pod 'MBCBase'
   
-  #pod 'RaLogRouter', '>= 1.0.0-Router'
-  
-end
-
-target 'RaLogRouter' do
-  
-  project 'RaLogRouter/RaLogRouter.xcodeproj'
-  
-  pod 'RaRouter'
   
 end

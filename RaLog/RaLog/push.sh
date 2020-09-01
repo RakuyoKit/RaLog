@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Authoer: Rakuyo
-# Update Date: 2020.04.09
+# Update Date: 2020.04.07
 
 # 开始时间
 start=$(date +%s)
@@ -53,19 +53,8 @@ echo "${Default}========================================================"
 echo "  The info.plist file has been updated"
 echo "${Default}========================================================"
 
-# 判断是否是 Router 组件
-if [[ $name =~ "Router" ]]; then
-    isRouter=true
-else
-    isRouter=false
-fi
-
 # commit 信息
-if [[ $isRouter == true ]]; then
-    message="[发版脚本] [Router] 版本更新至 $version $dateString"
-else
-    message="[发版脚本] [Core] 版本更新至 $version $dateString"
-fi
+message="[Release Script] Version updated to $version $dateString"
 
 # 提交 git
 git add *.podspec && git commit -m $message && git push
@@ -80,7 +69,7 @@ echo "  Start push ${Cyan}$name${Default} at $(date "+%F %r")"
 echo "${Default}========================================================"
 
 # 推送
-pod repo push pettyb-iosmodule-modulespace $name.podspec --allow-warnings --skip-tests
+pod trunk push $name.podspec --allow-warnings --skip-tests
 
 # 计算时差
 time=$(( $(date +%s) - $start ))
@@ -91,23 +80,3 @@ echo "  finish push ${Cyan}$name${Default}, time consuming $time second"
 echo "${Default}========================================================"
 
 say -v Mei-Jia "$name 推送完毕，耗时约为 $timeM 分钟"
-
-# Router 组件更新当前仓库
-if [[ $isRouter == true ]]; then
-
-    pod repo update pettyb-iosmodule-modulespace
-
-    # Podfile.lock 文件路径
-    if [[ -f "../../Podfile.lock" ]]; then
-        cd ../..
-
-    elif [[ -f "../Podfile.lock" ]]; then
-        cd ..
-    fi
-
-    rm -f Podfile.lock && pod install
-
-    git add Podfile.lock && git commit -m "更新 Router 组件 pod 版本" && git push
-
-    say -v Mei-Jia "$name的 Router pod 更新完成"
-fi
