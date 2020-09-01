@@ -18,7 +18,7 @@ public protocol Filterable {
     /// The default implementation:
     ///
     /// ```swift
-    /// return filteredFiles.contains(log.fileName) || filteredFlags.contains(log.flag)
+    /// return filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
     /// ```
     ///
     /// - Parameter log: Log that judged whether they need to be filtered
@@ -66,7 +66,7 @@ public extension Filterable {
     
     @inline(__always)
     static func filter(_ log: Log) -> Bool {
-        return filteredFiles.contains(log.fileName) || filteredFlags.contains(log.flag)
+        return filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
     }
 }
 
@@ -128,7 +128,7 @@ public extension Filterable {
     
     static func fileterCurrentFileLogs(_ file: String = #file) {
         
-        let fileName = Log("", fileName: file, methodName: "", line: 0, flag: Log.Flag(""), module: "").fileName
+        let fileName = Log("", file: file, function: "", line: 0, flag: Log.Flag(""), module: "").file
         filteredFiles.insert(fileName)
     }
 }

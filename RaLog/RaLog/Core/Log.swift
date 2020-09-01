@@ -11,22 +11,23 @@ import Foundation
 /// Model for storing log
 open class Log: Codable {
     
+    /// Log identifier
     public typealias Flag = String
     
-    public init(_ log: Any?, fileName: String, methodName: String, line: Int, flag: Flag, module: String? = nil) {
+    public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil) {
         
         self.log = log
-        self.methodName = methodName
+        self.function = function
         self.line = line
         self.flag = flag
         self.module = module ?? "RaLog"
         
         self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
         
-        if fileName.contains("/") {
-            self.fileName = fileName.components(separatedBy: "/").last ?? "Failed to get file"
+        if file.contains("/") {
+            self.file = file.components(separatedBy: "/").last ?? "Failed to get file"
         } else {
-            self.fileName = fileName
+            self.file = file
         }
         
         self.safeLog = "\(log ?? "nil")"
@@ -39,10 +40,10 @@ open class Log: Codable {
     public let safeLog: String
     
     /// The name of the file to print the log
-    open var fileName: String
+    open var file: String
     
     /// The name of the method to print the log
-    open var methodName: String
+    open var function: String
     
     /// The number of the lines to print the log
     open var line: Int
@@ -66,11 +67,11 @@ open class Log: Codable {
 }
 
 private extension Log {
-
+    
     enum CodingKeys: String, CodingKey {
         
-        case fileName
-        case methodName
+        case file
+        case function
         case line
         case flag
         case module
@@ -84,11 +85,11 @@ private extension Log {
 // MARK: - Hashable
 
 extension Log: Hashable {
-
+    
     open func hash(into hasher: inout Hasher) {
         hasher.combine(timestamp)
         hasher.combine(line)
-        hasher.combine(fileName)
+        hasher.combine(file)
         hasher.combine(safeLog)
         hasher.combine(logedStr)
     }
@@ -103,7 +104,7 @@ extension Log: Equatable {
         // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`
         return lhs.timestamp == rhs.timestamp
             && lhs.line      == rhs.line
-            && lhs.fileName  == rhs.fileName
+            && lhs.file  == rhs.file
             && lhs.safeLog   == rhs.safeLog
             && lhs.logedStr  == rhs.logedStr
     }

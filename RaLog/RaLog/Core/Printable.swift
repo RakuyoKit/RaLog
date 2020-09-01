@@ -47,7 +47,7 @@ public extension Printable {
         
         return """
         
-        [↓ In `\(log.methodName)` of \(log.fileName):\(log.line) ↓]
+        [↓ In `\(log.function)` of \(log.file):\(log.line) ↓]
         [\(log.module)] \(log.formatTime) <\(log.flag)> : \(log.safeLog)
         
         """

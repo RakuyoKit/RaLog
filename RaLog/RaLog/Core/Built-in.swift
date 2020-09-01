@@ -30,7 +30,7 @@ public extension Printable {
         _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> (Log.Flag) -> Log {
         
-        return { print(Log(kLog, fileName: file, methodName: function, line: line, flag: $0, module: module)) }
+        return { print(Log(kLog, file: file, function: function, line: line, flag: $0, module: module)) }
     }
 }
 
