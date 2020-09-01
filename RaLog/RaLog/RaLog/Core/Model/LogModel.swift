@@ -86,10 +86,8 @@ extension LogModel: Hashable {
     open func hash(into hasher: inout Hasher) {
         hasher.combine(timestamp)
         hasher.combine(line)
-        hasher.combine(safeLog)
         hasher.combine(fileName)
-        hasher.combine(formatTime)
-        hasher.combine(module)
+        hasher.combine(safeLog)
         hasher.combine(logedStr)
     }
 }
