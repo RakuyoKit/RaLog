@@ -8,8 +8,11 @@
 
 import Foundation
 
-/// Model for storing log
-open class Log: Codable {
+/// A model for storing log data.
+///
+/// It can also be used to perform some log operations.
+/// See `Printable`, `Storable` and `Filterable` to learn more
+open class Log: Codable, Printable, Storable, Filterable {
     
     /// Log identifier
     public typealias Flag = String
