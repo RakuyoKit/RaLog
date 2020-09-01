@@ -23,14 +23,31 @@ open class Log: Codable, Printable, Storable, Filterable {
         self.function = function
         self.line = line
         self.flag = flag
-        self.module = module ?? "RaLog"
         
         self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
         
-        if file.contains("/") {
-            self.file = file.components(separatedBy: "/").last ?? "Failed to get file"
+        if _fastPath(file.contains("/")) {
+            
+            let components = file.components(separatedBy: "/")
+            
+            self.file = components.last ?? "Failed to get file"
+            
+            if let module = module  {
+                self.module = module
+            }
+            
+            // Use the first-level subdirectory under the pods path as the module name
+            else if let index = components.firstIndex(of: "Pods") {
+                self.module = components[index + 1]
+            }
+            
+            else {
+                self.module = "RaLog"
+            }
+            
         } else {
             self.file = file
+            self.module = module ?? "RaLog"
         }
         
         self.safeLog = "\(log ?? "nil")"
