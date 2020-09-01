@@ -11,10 +11,10 @@ import Foundation
 /// Model for storing log
 open class LogModel: Codable {
     
-    public init(_ log: Any?, fileName: String, funcName: String, line: Int, flag: LogFlag, module: String) {
+    public init(_ log: Any?, fileName: String, methodName: String, line: Int, flag: LogFlag, module: String) {
         
         self.log = log
-        self.funcName = funcName
+        self.methodName = methodName
         self.line = line
         self.flag = flag
         self.module = module
@@ -39,8 +39,8 @@ open class LogModel: Codable {
     /// The name of the file to print the log
     open var fileName: String
     
-    /// The name of the function to print the log
-    open var funcName: String
+    /// The name of the method to print the log
+    open var methodName: String
     
     /// The number of the lines to print the log
     open var line: Int
@@ -68,7 +68,7 @@ private extension LogModel {
     enum CodingKeys: String, CodingKey {
         
         case fileName
-        case funcName
+        case methodName
         case line
         case flag
         case module
