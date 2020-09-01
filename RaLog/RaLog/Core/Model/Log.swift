@@ -1,5 +1,5 @@
 //
-//  LogModel.swift
+//  Log.swift
 //  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Model for storing log
-open class LogModel: Codable {
+open class Log: Codable {
     
     public typealias Flag = String
     
@@ -21,7 +21,7 @@ open class LogModel: Codable {
         self.flag = flag
         self.module = module
         
-        self.formatTime = LogModel.formatter.string(from: Date(timeIntervalSince1970: timestamp))
+        self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
         
         if fileName.contains("/") {
             self.fileName = fileName.components(separatedBy: "/").last ?? "Failed to get file"
@@ -65,7 +65,7 @@ open class LogModel: Codable {
     open var logedStr: String = ""
 }
 
-private extension LogModel {
+private extension Log {
 
     enum CodingKeys: String, CodingKey {
         
@@ -83,7 +83,7 @@ private extension LogModel {
 
 // MARK: - Hashable
 
-extension LogModel: Hashable {
+extension Log: Hashable {
 
     open func hash(into hasher: inout Hasher) {
         hasher.combine(timestamp)
@@ -96,9 +96,9 @@ extension LogModel: Hashable {
 
 // MARK: - Equatable
 
-extension LogModel: Equatable {
+extension Log: Equatable {
     
-    public static func == (lhs: LogModel, rhs: LogModel) -> Bool {
+    public static func == (lhs: Log, rhs: Log) -> Bool {
         
         // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`
         return lhs.timestamp == rhs.timestamp
@@ -111,7 +111,7 @@ extension LogModel: Equatable {
 
 // MARK: - Tools
 
-private extension LogModel {
+private extension Log {
     
     /// Cache `DateFormatter` object
     static let formatter = { () -> DateFormatter in

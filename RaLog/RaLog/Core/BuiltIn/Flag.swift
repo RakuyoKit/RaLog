@@ -9,13 +9,13 @@
 import Foundation
 
 /// Built-in log identifier
-public extension LogModel.Flag {
+public extension Log.Flag {
     
-    static let debug      : LogModel.Flag = "👾 Debug"
-    static let warning    : LogModel.Flag = "⚠️ Warning"
-    static let success    : LogModel.Flag = "✅ Success"
-    static let error      : LogModel.Flag = "❌ Error"
-    static let `deinit`   : LogModel.Flag = "⁉️ Deinit"
-    static let jump       : LogModel.Flag = "👋 Jump"
-    static let javascript : LogModel.Flag = "🔥 Javascript"
+    static let debug      : Log.Flag = "👾 Debug"
+    static let warning    : Log.Flag = "⚠️ Warning"
+    static let success    : Log.Flag = "✅ Success"
+    static let error      : Log.Flag = "❌ Error"
+    static let `deinit`   : Log.Flag = "⁉️ Deinit"
+    static let jump       : Log.Flag = "👋 Jump"
+    static let javascript : Log.Flag = "🔥 Javascript"
 }

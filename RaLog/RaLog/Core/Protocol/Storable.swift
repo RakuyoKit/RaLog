@@ -38,7 +38,7 @@ public protocol Storable {
     static var storageMode: StorageMode { get }
     
     /// An array to store all logs. See the `store(_:)` method for details
-    static var logs: [LogModel] { get set }
+    static var logs: [Log] { get set }
     
     /// The full path of the log storage file on the disk.
     ///
@@ -64,8 +64,8 @@ public protocol Storable {
     /// - Attention:
     ///     The above operations are effective in both `DEBUG` and `RELEASE` modes. You can implement this method yourself to change this logic.
     ///
-    /// - Parameter log: The `LogModel` to be stored
-    static func store(_ log: LogModel)
+    /// - Parameter log: The `Log` to be stored
+    static func store(_ log: Log)
     
     /// Read the log data of the date corresponding to `logDate` cached in the disk
     ///
@@ -75,7 +75,7 @@ public protocol Storable {
     ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to read log data from the disk
     ///
     /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`
-    static func readLogFromDisk(logDate: Date) -> [LogModel]?
+    static func readLogFromDisk(logDate: Date) -> [Log]?
     
     /// Delete the log data of the date corresponding to `logDate` cached in the disk
     ///
@@ -114,7 +114,7 @@ public extension Storable {
     ///
     /// - Parameter days: Heaven number
     /// - Returns: Log data of the day
-    static func readLogFromDisk(days: Int) -> [LogModel]? {
+    static func readLogFromDisk(days: Int) -> [Log]? {
         
         let aTimeInterval = Date().timeIntervalSinceReferenceDate + Double(-days * 86400)
         return readLogFromDisk(logDate: Date(timeIntervalSinceReferenceDate: aTimeInterval))
@@ -139,9 +139,9 @@ public extension Storable {
     ///   - days: Time point or time interval.
     ///   - strategy: Strategy of break method execution，See `BreakStrategy` for details. The default is `.never`.
     /// - Returns: The obtained log. When the whole is `nil`, it means that no log is obtained, and when the inner array is `nil`, it means that there is no log on that day.
-    static func readLogFromDisk<T: Collection>(days: T, strategy: BreakStrategy = .never) -> [[LogModel]?]? where T.Element == Int {
+    static func readLogFromDisk<T: Collection>(days: T, strategy: BreakStrategy = .never) -> [[Log]?]? where T.Element == Int {
         
-        var logs: [[LogModel]?] = []
+        var logs: [[Log]?] = []
         var failureCount = 0
         
         for time in days.reversed() {
@@ -250,9 +250,9 @@ private var _logsKey = "_raLog_logsKey"
 
 public extension Storable {
     
-     static var logs: [LogModel] {
+     static var logs: [Log] {
         get {
-            guard let kLogs = objc_getAssociatedObject(self, &_logsKey) as? [LogModel] else {
+            guard let kLogs = objc_getAssociatedObject(self, &_logsKey) as? [Log] else {
                 objc_setAssociatedObject(self, &_logsKey, [], .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 return []
             }
@@ -276,7 +276,7 @@ public extension Storable {
     
     static var filePath: String { dirPath + "/" + fileName }
     
-    static func store(_ log: LogModel) {
+    static func store(_ log: Log) {
         
         if storageMode.contains(.memory) {
             logs += [log]
@@ -328,12 +328,12 @@ public extension Storable {
         fileHandle.closeFile()
     }
     
-    static func readLogFromDisk(logDate: Date = Date()) -> [LogModel]? {
+    static func readLogFromDisk(logDate: Date = Date()) -> [Log]? {
         
         let filePath = dirPath + "/" + "\(cacheDateFormatter.string(from: logDate)).log"
         
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return nil }
-        return try? JSONDecoder().decode([LogModel].self, from: data)
+        return try? JSONDecoder().decode([Log].self, from: data)
     }
     
     static func removeLogFromDisk(logDate: Date = Date()) -> Result<Void, Error> {

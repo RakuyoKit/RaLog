@@ -15,10 +15,10 @@ public protocol Printable {
     
     /// Used to format the `log` parameter
     ///
-    /// - Parameter log: The Log model contains all the information needed to print the Log. See `LogModel` for details
+    /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details
     /// - Returns: The formatted string can be printed directly
     @inline(__always)
-    static func format(_ log: LogModel) -> String
+    static func format(_ log: Log) -> String
     
     /// Print the `log` parameter
     ///
@@ -32,10 +32,10 @@ public protocol Printable {
     /// - Attention:
     ///     The first and second steps mentioned above are only effective in `DEBUG` mode. This means that the value of `logedStr` is meaningful only in `DEBUG` mode. You can change the implementation, for example, let it perform the same operation in `RELEASE` mode
     ///
-    /// - Parameter log: The Log model contains all the information needed to print the Log. See `LogModel` for details
+    /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details
     /// - Returns: log model
     @inline(__always) @discardableResult
-    static func print(_ log: LogModel) -> LogModel
+    static func print(_ log: Log) -> Log
 }
 
 // MARK: - Default
@@ -43,7 +43,7 @@ public protocol Printable {
 public extension Printable {
     
     @inline(__always)
-    static func format(_ log: LogModel) -> String {
+    static func format(_ log: Log) -> String {
         
         return """
         
@@ -54,7 +54,7 @@ public extension Printable {
     }
     
     @inline(__always) @discardableResult
-    static func print(_ log: LogModel) -> LogModel {
+    static func print(_ log: Log) -> Log {
         
         #if DEBUG
         

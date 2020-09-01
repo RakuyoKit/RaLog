@@ -23,29 +23,29 @@ public protocol Filterable {
     ///
     /// - Parameter log: Log that judged whether they need to be filtered
     /// - Returns: Return `true` to prohibit printing
-    static func filter(_ log: LogModel) -> Bool
+    static func filter(_ log: Log) -> Bool
     
     // MARK: - Filter Flag
     
-    /// Used to store the `LogModel.Flag` that needs to be filtered.
+    /// Used to store the `Log.Flag` that needs to be filtered.
     ///
     /// You can refer to the following implementation:
     ///
     /// ```swift
-    /// public var filteredFlags: Set<LogModel.Flag> = [] // Do not filter any type of logs by default
-    /// public var filteredFlags: Set<LogModel.Flag> = [LogModel.Flag("A")] // Filter Log of A tag by default
+    /// public var filteredFlags: Set<Log.Flag> = [] // Do not filter any type of logs by default
+    /// public var filteredFlags: Set<Log.Flag> = [Log.Flag("A")] // Filter Log of A tag by default
     /// ```
-    static var filteredFlags: Set<LogModel.Flag> { get set }
+    static var filteredFlags: Set<Log.Flag> { get set }
     
-    /// Filter a `LogModel.Flag`.
+    /// Filter a `Log.Flag`.
     ///
-    /// - Parameter flag: `LogModel.Flag` filtered
-    static func addFilter(flag: LogModel.Flag ...)
+    /// - Parameter flag: `Log.Flag` filtered
+    static func addFilter(flag: Log.Flag ...)
     
-    /// Remove the filtering of a `LogModel.Flag`.
+    /// Remove the filtering of a `Log.Flag`.
     ///
-    /// - Parameter flag: `LogModel.Flag` whose filter is removed
-    static func removeFilter(flag: LogModel.Flag ...)
+    /// - Parameter flag: `Log.Flag` whose filter is removed
+    static func removeFilter(flag: Log.Flag ...)
     
     // MARK: - Filter File
     
@@ -65,7 +65,7 @@ public protocol Filterable {
 public extension Filterable {
     
     @inline(__always)
-    static func filter(_ log: LogModel) -> Bool {
+    static func filter(_ log: Log) -> Bool {
         return filteredFiles.contains(log.fileName) || filteredFlags.contains(log.flag)
     }
 }
@@ -76,11 +76,11 @@ private var _filteredFlagsKey = "_raLog_filteredFlagsKey"
 
 public extension Filterable {
     
-    static var filteredFlags: Set<LogModel.Flag> {
+    static var filteredFlags: Set<Log.Flag> {
         get {
-            guard let kFilteredFlags = objc_getAssociatedObject(self, &_filteredFlagsKey) as? Set<LogModel.Flag> else {
+            guard let kFilteredFlags = objc_getAssociatedObject(self, &_filteredFlagsKey) as? Set<Log.Flag> else {
                 
-                let kFilteredFlags = Set<LogModel.Flag>()
+                let kFilteredFlags = Set<Log.Flag>()
                 objc_setAssociatedObject(self, &_filteredFlagsKey, kFilteredFlags, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 
                 return kFilteredFlags
@@ -93,11 +93,11 @@ public extension Filterable {
         }
     }
     
-    static func addFilter(flag: LogModel.Flag ...) {
+    static func addFilter(flag: Log.Flag ...) {
         flag.forEach { filteredFlags.insert($0) }
     }
     
-    static func removeFilter(flag: LogModel.Flag ...) {
+    static func removeFilter(flag: Log.Flag ...) {
         flag.forEach { filteredFlags.remove($0) }
     }
 }
@@ -128,7 +128,7 @@ public extension Filterable {
     
     static func fileterCurrentFileLogs(_ file: String = #file) {
         
-        let fileName = LogModel("", fileName: file, methodName: "", line: 0, flag: LogModel.Flag(""), module: "").fileName
+        let fileName = Log("", fileName: file, methodName: "", line: 0, flag: Log.Flag(""), module: "").fileName
         filteredFiles.insert(fileName)
     }
 }
