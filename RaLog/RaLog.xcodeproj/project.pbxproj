@@ -7,66 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AE8770F24FDD96300A862BE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8770E24FDD96300A862BE /* Log.swift */; };
-		3AE8771424FDDCE700A862BE /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8771324FDDCE700A862BE /* Storable.swift */; };
-		3AE87B1C24FDF02300A862BE /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE87B1B24FDF02300A862BE /* Filterable.swift */; };
-		3AE87B1E24FDF2DA00A862BE /* Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE87B1D24FDF2DA00A862BE /* Printable.swift */; };
-		3AE882F724FE127600A862BE /* Built-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE882F624FE127600A862BE /* Built-in.swift */; };
-		3AF919DD22FD264800D063BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919DC22FD264800D063BD /* AppDelegate.swift */; };
-		3AF919DF22FD264800D063BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919DE22FD264800D063BD /* ViewController.swift */; };
-		3AF919E222FD264800D063BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF919E022FD264800D063BD /* Main.storyboard */; };
-		3AF919E422FD264900D063BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF919E322FD264900D063BD /* Assets.xcassets */; };
-		3AF919E722FD264900D063BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF919E522FD264900D063BD /* LaunchScreen.storyboard */; };
-		3AF919F222FD264900D063BD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF919F122FD264900D063BD /* Tests.swift */; };
-		3AF91CD622FD5C0B00D063BD /* push.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3AF91CD522FD5C0B00D063BD /* push.sh */; };
-		3AFDB1D6236AAA8700AF5F29 /* RaLog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */; };
-		A034732A3FE14C11187E3CA4 /* Pods_RaLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */; };
+		3AE8830924FE3A0600A862BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8830824FE3A0600A862BE /* AppDelegate.swift */; };
+		3AE8830D24FE3A0600A862BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8830C24FE3A0600A862BE /* ViewController.swift */; };
+		3AE8831024FE3A0600A862BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8830E24FE3A0600A862BE /* Main.storyboard */; };
+		3AE8831224FE3A0B00A862BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8831124FE3A0B00A862BE /* Assets.xcassets */; };
+		3AE8831524FE3A0B00A862BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8831324FE3A0B00A862BE /* LaunchScreen.storyboard */; };
+		3AE8832024FE3A0B00A862BE /* RaLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8831F24FE3A0B00A862BE /* RaLogTests.swift */; };
+		3AE8833324FE3A8300A862BE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8832E24FE3A8200A862BE /* Log.swift */; };
+		3AE8833424FE3A8300A862BE /* Built-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8832F24FE3A8200A862BE /* Built-in.swift */; };
+		3AE8833524FE3A8300A862BE /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8833024FE3A8200A862BE /* Storable.swift */; };
+		3AE8833624FE3A8300A862BE /* Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8833124FE3A8200A862BE /* Printable.swift */; };
+		3AE8833724FE3A8300A862BE /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8833224FE3A8300A862BE /* Filterable.swift */; };
+		3AE8833E24FE3BD800A862BE /* RaLog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8833C24FE3BD800A862BE /* RaLog.podspec */; };
+		3AE8833F24FE3BD800A862BE /* push.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8833D24FE3BD800A862BE /* push.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3AF919EE22FD264900D063BD /* PBXContainerItemProxy */ = {
+		3AE8831C24FE3A0B00A862BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3AF919D122FD264800D063BD /* Project object */;
+			containerPortal = 3AE882FD24FE3A0600A862BE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3AF919D822FD264800D063BD;
+			remoteGlobalIDString = 3AE8830424FE3A0600A862BE;
 			remoteInfo = RaLog;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3AE8770E24FDD96300A862BE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		3AE8771324FDDCE700A862BE /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
-		3AE87B1B24FDF02300A862BE /* Filterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
-		3AE87B1D24FDF2DA00A862BE /* Printable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printable.swift; sourceTree = "<group>"; };
-		3AE882F624FE127600A862BE /* Built-in.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Built-in.swift"; sourceTree = "<group>"; };
-		3AF919D922FD264800D063BD /* RaLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF919DC22FD264800D063BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AF919DE22FD264800D063BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3AF919E122FD264800D063BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3AF919E322FD264900D063BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3AF919E622FD264900D063BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3AF919E822FD264900D063BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF919ED22FD264900D063BD /* RaLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF919F122FD264900D063BD /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		3AF919F322FD264900D063BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF91CD522FD5C0B00D063BD /* push.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = push.sh; sourceTree = SOURCE_ROOT; };
-		3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = RaLog.podspec; sourceTree = SOURCE_ROOT; };
-		3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.debug.xcconfig"; path = "../RaLog/Pods/Target Support Files/Pods-RaLog/Pods-RaLog.debug.xcconfig"; sourceTree = "<group>"; };
-		41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		618E1C68AC78F62A4654B8F9 /* Pods-RaLog.mbdev_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.mbdev_debug.xcconfig"; path = "../RaLog/Pods/Target Support Files/Pods-RaLog/Pods-RaLog.mbdev_debug.xcconfig"; sourceTree = "<group>"; };
-		81ECAEBCB60EEB3A86A81C9F /* Pods-RaLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaLog.release.xcconfig"; path = "../RaLog/Pods/Target Support Files/Pods-RaLog/Pods-RaLog.release.xcconfig"; sourceTree = "<group>"; };
+		3AE8830524FE3A0600A862BE /* RaLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE8830824FE3A0600A862BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AE8830C24FE3A0600A862BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AE8830F24FE3A0600A862BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AE8831124FE3A0B00A862BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AE8831424FE3A0B00A862BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AE8831624FE3A0B00A862BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE8831B24FE3A0B00A862BE /* RaLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE8831F24FE3A0B00A862BE /* RaLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaLogTests.swift; sourceTree = "<group>"; };
+		3AE8832124FE3A0B00A862BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE8832E24FE3A8200A862BE /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		3AE8832F24FE3A8200A862BE /* Built-in.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Built-in.swift"; sourceTree = "<group>"; };
+		3AE8833024FE3A8200A862BE /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		3AE8833124FE3A8200A862BE /* Printable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printable.swift; sourceTree = "<group>"; };
+		3AE8833224FE3A8300A862BE /* Filterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
+		3AE8833C24FE3BD800A862BE /* RaLog.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = RaLog.podspec; sourceTree = SOURCE_ROOT; };
+		3AE8833D24FE3BD800A862BE /* push.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = push.sh; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3AF919D622FD264800D063BD /* Frameworks */ = {
+		3AE8830224FE3A0600A862BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A034732A3FE14C11187E3CA4 /* Pods_RaLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF919EA22FD264900D063BD /* Frameworks */ = {
+		3AE8831824FE3A0B00A862BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,101 +70,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BEF580B624E808A1FA3FB14 /* Frameworks */ = {
+		3AE882FC24FE3A0600A862BE = {
 			isa = PBXGroup;
 			children = (
-				41B3D9F313A58D4F1DE56A10 /* Pods_RaLog.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3AF919D022FD264800D063BD = {
-			isa = PBXGroup;
-			children = (
-				3AF919DB22FD264800D063BD /* RaLog */,
-				3AF919F022FD264900D063BD /* RaLogTests */,
-				3AF919DA22FD264800D063BD /* Products */,
-				4C0EF218BD2854A91A8C086B /* Pods */,
-				2BEF580B624E808A1FA3FB14 /* Frameworks */,
+				3AE8830724FE3A0600A862BE /* RaLog */,
+				3AE8831E24FE3A0B00A862BE /* RaLogTests */,
+				3AE8830624FE3A0600A862BE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3AF919DA22FD264800D063BD /* Products */ = {
+		3AE8830624FE3A0600A862BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AF919D922FD264800D063BD /* RaLog.app */,
-				3AF919ED22FD264900D063BD /* RaLogTests.xctest */,
+				3AE8830524FE3A0600A862BE /* RaLog.app */,
+				3AE8831B24FE3A0B00A862BE /* RaLogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3AF919DB22FD264800D063BD /* RaLog */ = {
+		3AE8830724FE3A0600A862BE /* RaLog */ = {
 			isa = PBXGroup;
 			children = (
-				3AF91CD522FD5C0B00D063BD /* push.sh */,
-				3AFDB1D5236AAA8700AF5F29 /* RaLog.podspec */,
-				3AF91A0E22FD266E00D063BD /* Core */,
-				3AF91A0C22FD265F00D063BD /* Other */,
+				3AE8833D24FE3BD800A862BE /* push.sh */,
+				3AE8833C24FE3BD800A862BE /* RaLog.podspec */,
+				3AE8832A24FE3A1900A862BE /* Core */,
+				3AE8832B24FE3A2A00A862BE /* Other */,
 			);
 			path = RaLog;
 			sourceTree = "<group>";
 		};
-		3AF919F022FD264900D063BD /* RaLogTests */ = {
+		3AE8831E24FE3A0B00A862BE /* RaLogTests */ = {
 			isa = PBXGroup;
 			children = (
-				3AF919F122FD264900D063BD /* Tests.swift */,
-				3AF919F322FD264900D063BD /* Info.plist */,
+				3AE8831F24FE3A0B00A862BE /* RaLogTests.swift */,
+				3AE8832124FE3A0B00A862BE /* Info.plist */,
 			);
 			path = RaLogTests;
 			sourceTree = "<group>";
 		};
-		3AF91A0C22FD265F00D063BD /* Other */ = {
+		3AE8832A24FE3A1900A862BE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3AF919DC22FD264800D063BD /* AppDelegate.swift */,
-				3AF919DE22FD264800D063BD /* ViewController.swift */,
-				3AF919E022FD264800D063BD /* Main.storyboard */,
-				3AF919E322FD264900D063BD /* Assets.xcassets */,
-				3AF919E522FD264900D063BD /* LaunchScreen.storyboard */,
-				3AF919E822FD264900D063BD /* Info.plist */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		3AF91A0E22FD266E00D063BD /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				3AE87B1D24FDF2DA00A862BE /* Printable.swift */,
-				3AE8771324FDDCE700A862BE /* Storable.swift */,
-				3AE87B1B24FDF02300A862BE /* Filterable.swift */,
-				3AE8770E24FDD96300A862BE /* Log.swift */,
-				3AE882F624FE127600A862BE /* Built-in.swift */,
+				3AE8833124FE3A8200A862BE /* Printable.swift */,
+				3AE8833224FE3A8300A862BE /* Filterable.swift */,
+				3AE8833024FE3A8200A862BE /* Storable.swift */,
+				3AE8832E24FE3A8200A862BE /* Log.swift */,
+				3AE8832F24FE3A8200A862BE /* Built-in.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		4C0EF218BD2854A91A8C086B /* Pods */ = {
+		3AE8832B24FE3A2A00A862BE /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */,
-				618E1C68AC78F62A4654B8F9 /* Pods-RaLog.mbdev_debug.xcconfig */,
-				81ECAEBCB60EEB3A86A81C9F /* Pods-RaLog.release.xcconfig */,
+				3AE8830824FE3A0600A862BE /* AppDelegate.swift */,
+				3AE8830C24FE3A0600A862BE /* ViewController.swift */,
+				3AE8830E24FE3A0600A862BE /* Main.storyboard */,
+				3AE8831124FE3A0B00A862BE /* Assets.xcassets */,
+				3AE8831324FE3A0B00A862BE /* LaunchScreen.storyboard */,
+				3AE8831624FE3A0B00A862BE /* Info.plist */,
 			);
-			name = Pods;
-			path = ../Pods;
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3AF919D822FD264800D063BD /* RaLog */ = {
+		3AE8830424FE3A0600A862BE /* RaLog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF91A0122FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLog" */;
+			buildConfigurationList = 3AE8832424FE3A0B00A862BE /* Build configuration list for PBXNativeTarget "RaLog" */;
 			buildPhases = (
-				BF64FAA68F372DF372AD3766 /* [CP] Check Pods Manifest.lock */,
-				3AF919D522FD264800D063BD /* Sources */,
-				3AF919D622FD264800D063BD /* Frameworks */,
-				3AF919D722FD264800D063BD /* Resources */,
+				3AE8830124FE3A0600A862BE /* Sources */,
+				3AE8830224FE3A0600A862BE /* Frameworks */,
+				3AE8830324FE3A0600A862BE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -178,47 +150,47 @@
 			);
 			name = RaLog;
 			productName = RaLog;
-			productReference = 3AF919D922FD264800D063BD /* RaLog.app */;
+			productReference = 3AE8830524FE3A0600A862BE /* RaLog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3AF919EC22FD264900D063BD /* RaLogTests */ = {
+		3AE8831A24FE3A0B00A862BE /* RaLogTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF91A0422FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLogTests" */;
+			buildConfigurationList = 3AE8832724FE3A0B00A862BE /* Build configuration list for PBXNativeTarget "RaLogTests" */;
 			buildPhases = (
-				3AF919E922FD264900D063BD /* Sources */,
-				3AF919EA22FD264900D063BD /* Frameworks */,
-				3AF919EB22FD264900D063BD /* Resources */,
+				3AE8831724FE3A0B00A862BE /* Sources */,
+				3AE8831824FE3A0B00A862BE /* Frameworks */,
+				3AE8831924FE3A0B00A862BE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3AF919EF22FD264900D063BD /* PBXTargetDependency */,
+				3AE8831D24FE3A0B00A862BE /* PBXTargetDependency */,
 			);
 			name = RaLogTests;
 			productName = RaLogTests;
-			productReference = 3AF919ED22FD264900D063BD /* RaLogTests.xctest */;
+			productReference = 3AE8831B24FE3A0B00A862BE /* RaLogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3AF919D122FD264800D063BD /* Project object */ = {
+		3AE882FD24FE3A0600A862BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = Rakuyo;
 				TargetAttributes = {
-					3AF919D822FD264800D063BD = {
-						CreatedOnToolsVersion = 10.3;
+					3AE8830424FE3A0600A862BE = {
+						CreatedOnToolsVersion = 11.6;
 					};
-					3AF919EC22FD264900D063BD = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 3AF919D822FD264800D063BD;
+					3AE8831A24FE3A0B00A862BE = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 3AE8830424FE3A0600A862BE;
 					};
 				};
 			};
-			buildConfigurationList = 3AF919D422FD264800D063BD /* Build configuration list for PBXProject "RaLog" */;
+			buildConfigurationList = 3AE8830024FE3A0600A862BE /* Build configuration list for PBXProject "RaLog" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,31 +198,31 @@
 				en,
 				Base,
 			);
-			mainGroup = 3AF919D022FD264800D063BD;
-			productRefGroup = 3AF919DA22FD264800D063BD /* Products */;
+			mainGroup = 3AE882FC24FE3A0600A862BE;
+			productRefGroup = 3AE8830624FE3A0600A862BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AF919D822FD264800D063BD /* RaLog */,
-				3AF919EC22FD264900D063BD /* RaLogTests */,
+				3AE8830424FE3A0600A862BE /* RaLog */,
+				3AE8831A24FE3A0B00A862BE /* RaLogTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3AF919D722FD264800D063BD /* Resources */ = {
+		3AE8830324FE3A0600A862BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF91CD622FD5C0B00D063BD /* push.sh in Resources */,
-				3AF919E722FD264900D063BD /* LaunchScreen.storyboard in Resources */,
-				3AF919E422FD264900D063BD /* Assets.xcassets in Resources */,
-				3AF919E222FD264800D063BD /* Main.storyboard in Resources */,
-				3AFDB1D6236AAA8700AF5F29 /* RaLog.podspec in Resources */,
+				3AE8831524FE3A0B00A862BE /* LaunchScreen.storyboard in Resources */,
+				3AE8831224FE3A0B00A862BE /* Assets.xcassets in Resources */,
+				3AE8833E24FE3BD800A862BE /* RaLog.podspec in Resources */,
+				3AE8833F24FE3BD800A862BE /* push.sh in Resources */,
+				3AE8831024FE3A0600A862BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF919EB22FD264900D063BD /* Resources */ = {
+		3AE8831924FE3A0B00A862BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,77 +231,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		BF64FAA68F372DF372AD3766 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RaLog-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		3AF919D522FD264800D063BD /* Sources */ = {
+		3AE8830124FE3A0600A862BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE87B1E24FDF2DA00A862BE /* Printable.swift in Sources */,
-				3AE8771424FDDCE700A862BE /* Storable.swift in Sources */,
-				3AE87B1C24FDF02300A862BE /* Filterable.swift in Sources */,
-				3AE8770F24FDD96300A862BE /* Log.swift in Sources */,
-				3AF919DF22FD264800D063BD /* ViewController.swift in Sources */,
-				3AF919DD22FD264800D063BD /* AppDelegate.swift in Sources */,
-				3AE882F724FE127600A862BE /* Built-in.swift in Sources */,
+				3AE8830D24FE3A0600A862BE /* ViewController.swift in Sources */,
+				3AE8833524FE3A8300A862BE /* Storable.swift in Sources */,
+				3AE8833724FE3A8300A862BE /* Filterable.swift in Sources */,
+				3AE8833424FE3A8300A862BE /* Built-in.swift in Sources */,
+				3AE8830924FE3A0600A862BE /* AppDelegate.swift in Sources */,
+				3AE8833324FE3A8300A862BE /* Log.swift in Sources */,
+				3AE8833624FE3A8300A862BE /* Printable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF919E922FD264900D063BD /* Sources */ = {
+		3AE8831724FE3A0B00A862BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF919F222FD264900D063BD /* Tests.swift in Sources */,
+				3AE8832024FE3A0B00A862BE /* RaLogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3AF919EF22FD264900D063BD /* PBXTargetDependency */ = {
+		3AE8831D24FE3A0B00A862BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AF919D822FD264800D063BD /* RaLog */;
-			targetProxy = 3AF919EE22FD264900D063BD /* PBXContainerItemProxy */;
+			target = 3AE8830424FE3A0600A862BE /* RaLog */;
+			targetProxy = 3AE8831C24FE3A0B00A862BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3AF919E022FD264800D063BD /* Main.storyboard */ = {
+		3AE8830E24FE3A0600A862BE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3AF919E122FD264800D063BD /* Base */,
+				3AE8830F24FE3A0600A862BE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3AF919E522FD264900D063BD /* LaunchScreen.storyboard */ = {
+		3AE8831324FE3A0B00A862BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3AF919E622FD264900D063BD /* Base */,
+				3AE8831424FE3A0B00A862BE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -337,7 +284,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3A9E340B23766DD900D6B741 /* MBDev_Debug */ = {
+		3AE8832224FE3A0B00A862BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -369,7 +316,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -388,109 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited) MBCORE_MBDEV=1";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = MBDev_Debug;
-		};
-		3A9E340C23766DD900D6B741 /* MBDev_Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 618E1C68AC78F62A4654B8F9 /* Pods-RaLog.mbdev_debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5Q8TLD2828;
-				INFOPLIST_FILE = "$(SRCROOT)/RaLog/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLog;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = MBDev_Debug;
-		};
-		3A9E340D23766DD900D6B741 /* MBDev_Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5Q8TLD2828;
-				INFOPLIST_FILE = RaLogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaLog.app/RaLog";
-			};
-			name = MBDev_Debug;
-		};
-		3AF919FF22FD264900D063BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +344,7 @@
 			};
 			name = Debug;
 		};
-		3AF91A0022FD264900D063BD /* Release */ = {
+		3AE8832324FE3A0B00A862BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -532,7 +376,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -545,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -555,15 +398,14 @@
 			};
 			name = Release;
 		};
-		3AF91A0222FD264900D063BD /* Debug */ = {
+		3AE8832524FE3A0B00A862BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CA869B8808FFDB040F37908 /* Pods-RaLog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q8TLD2828;
 				INFOPLIST_FILE = "$(SRCROOT)/RaLog/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,15 +417,14 @@
 			};
 			name = Debug;
 		};
-		3AF91A0322FD264900D063BD /* Release */ = {
+		3AE8832624FE3A0B00A862BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81ECAEBCB60EEB3A86A81C9F /* Pods-RaLog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q8TLD2828;
 				INFOPLIST_FILE = "$(SRCROOT)/RaLog/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,7 +436,7 @@
 			};
 			name = Release;
 		};
-		3AF91A0522FD264900D063BD /* Debug */ = {
+		3AE8832824FE3A0B00A862BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -603,12 +444,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q8TLD2828;
 				INFOPLIST_FILE = RaLogTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -616,7 +458,7 @@
 			};
 			name = Debug;
 		};
-		3AF91A0622FD264900D063BD /* Release */ = {
+		3AE8832924FE3A0B00A862BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -624,12 +466,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q8TLD2828;
 				INFOPLIST_FILE = RaLogTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbcore.RaLogTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -640,37 +483,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3AF919D422FD264800D063BD /* Build configuration list for PBXProject "RaLog" */ = {
+		3AE8830024FE3A0600A862BE /* Build configuration list for PBXProject "RaLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF919FF22FD264900D063BD /* Debug */,
-				3A9E340B23766DD900D6B741 /* MBDev_Debug */,
-				3AF91A0022FD264900D063BD /* Release */,
+				3AE8832224FE3A0B00A862BE /* Debug */,
+				3AE8832324FE3A0B00A862BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF91A0122FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLog" */ = {
+		3AE8832424FE3A0B00A862BE /* Build configuration list for PBXNativeTarget "RaLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF91A0222FD264900D063BD /* Debug */,
-				3A9E340C23766DD900D6B741 /* MBDev_Debug */,
-				3AF91A0322FD264900D063BD /* Release */,
+				3AE8832524FE3A0B00A862BE /* Debug */,
+				3AE8832624FE3A0B00A862BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF91A0422FD264900D063BD /* Build configuration list for PBXNativeTarget "RaLogTests" */ = {
+		3AE8832724FE3A0B00A862BE /* Build configuration list for PBXNativeTarget "RaLogTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF91A0522FD264900D063BD /* Debug */,
-				3A9E340D23766DD900D6B741 /* MBDev_Debug */,
-				3AF91A0622FD264900D063BD /* Release */,
+				3AE8832824FE3A0B00A862BE /* Debug */,
+				3AE8832924FE3A0B00A862BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3AF919D122FD264800D063BD /* Project object */;
+	rootObject = 3AE882FD24FE3A0600A862BE /* Project object */;
 }
