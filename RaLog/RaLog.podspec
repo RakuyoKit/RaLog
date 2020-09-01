@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
   
   s.version          = '1.0.0'
   
-  s.summary          = ''
+  s.summary          = 'A log component'
   
-  s.description      = ''
+  s.description      = 'Protocol-oriented and highly customizable log component'
   
   s.homepage         = 'https://github.com/rakuyoMo/RaLog'
   
