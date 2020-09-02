@@ -71,17 +71,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Log.debug("Note the output of the console")
+        
         Log.warning("Please note that the request is about to start！😎")
         
-        viewModel.someRequest { (result) in
+        // Analog api request
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             
-            switch result {
+            if success {
+                Log.success("request success 🥳, content: api request succeeded")
                 
-            case .success(let content):
-                Log.success("request success 🥳, content: \(content)")
-                
-            case .failure(let error):
-                Log.error("request failure 😢, error: \(error)")
+            } else {
+                Log.error("request failure 😢, error: \("some error")")
             }
         }
     }
@@ -91,6 +92,21 @@ class ViewController: UIViewController {
 当即将进入 `ViewController` 控制器时，控制台将输出如下内容：
 
 ```
+
+[↓ In `viewDidLoad()` of ViewController.swift:32 ↓]
+[RaLog] 11:17:01:353 <👾 Debug> : Note the output of the console
+
+
+[↓ In `viewDidLoad()` of ViewController.swift:36 ↓]
+[RaLog] 11:17:01:356 <⚠️ Warning> : Please note that the request is about to start！😎
+
+
+[↓ In `viewDidAppear(_:)` of ViewController.swift:16 ↓]
+[RaLog] 11:17:01:370 <👋 Jump> : - Appear - ViewController
+
+
+[↓ In `viewDidLoad()` of ViewController.swift:42 ↓]
+[RaLog] 11:17:02:453 <✅ Success> : request success 🥳, content: api request succeeded
 
 ```
 
