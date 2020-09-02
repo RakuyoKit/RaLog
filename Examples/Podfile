@@ -16,4 +16,7 @@ target 'Examples' do
 
   pod 'RaLog'
   
+  pod 'Then'
+  pod 'SnapKit'
+  
 end

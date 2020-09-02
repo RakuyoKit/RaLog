@@ -16,6 +16,7 @@
 		3A6B264B24FF3D5E0089367D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B264A24FF3D5E0089367D /* Model.swift */; };
 		3A6B264D24FF3EE60089367D /* AnotherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B264C24FF3EE60089367D /* AnotherController.swift */; };
 		3A6B284524FF49180089367D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B284424FF49180089367D /* Logger.swift */; };
+		3A6B284924FF5D960089367D /* LogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B284824FF5D960089367D /* LogListViewController.swift */; };
 		A72A0CB15B294BF08C43532F /* Pods_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34D77ABD4C74C16A56688DE /* Pods_Examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		3A6B264A24FF3D5E0089367D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3A6B264C24FF3EE60089367D /* AnotherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherController.swift; sourceTree = "<group>"; };
 		3A6B284424FF49180089367D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3A6B284824FF5D960089367D /* LogListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewController.swift; sourceTree = "<group>"; };
 		5E57FD7548007E50B7445629 /* Pods-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples.release.xcconfig"; path = "Target Support Files/Pods-Examples/Pods-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		B34D77ABD4C74C16A56688DE /* Pods_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				3A6B243C24FF32650089367D /* ViewModel.swift */,
 				3A6B241E24FF31E80089367D /* ViewController.swift */,
 				3A6B264C24FF3EE60089367D /* AnotherController.swift */,
+				3A6B284824FF5D960089367D /* LogListViewController.swift */,
 				3A6B242324FF31EA0089367D /* Assets.xcassets */,
 				3A6B242524FF31EA0089367D /* LaunchScreen.storyboard */,
 				3A6B242824FF31EA0089367D /* Info.plist */,
@@ -140,6 +143,7 @@
 				3A6B241324FF31E80089367D /* Sources */,
 				3A6B241424FF31E80089367D /* Frameworks */,
 				3A6B241524FF31E80089367D /* Resources */,
+				1EB1EEFF44AAE5FD64C31239 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +230,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1EB1EEFF44AAE5FD64C31239 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Examples/Pods-Examples-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Examples/Pods-Examples-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Examples/Pods-Examples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		74A92716EB16225F4EDE696E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +281,7 @@
 				3A6B243D24FF32650089367D /* ViewModel.swift in Sources */,
 				3A6B264D24FF3EE60089367D /* AnotherController.swift in Sources */,
 				3A6B241B24FF31E80089367D /* AppDelegate.swift in Sources */,
+				3A6B284924FF5D960089367D /* LogListViewController.swift in Sources */,
 				3A6B264B24FF3D5E0089367D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

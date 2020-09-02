@@ -46,19 +46,19 @@ class ViewModel {
                 
                 Logger.p("Use currying call form")(.curry)
                 
-                return (nil, true)
+                return (nil, false)
             },
             DataSource(title: "Custom Flag") { _ in
                 
                 Logger.note("This log is identified by '<\(Log.Flag.note)>'")
                 
-                return (nil, true)
+                return (nil, false)
             },
             DataSource(title: "Set Module separately for a log") { _ in
                 
                 Logger.note("Please note the changes in [Module]", module: "RaLog_Demo")
                 
-                return (nil, true)
+                return (nil, false)
             }
         ]),
         
@@ -69,14 +69,14 @@ class ViewModel {
                 Log.addFilter(flag: .debug)
                 Log.debug("This log will not be printed on the console, so you will not see it")
                 
-                return (nil, true)
+                return (nil, false)
             },
             DataSource(title: "Cancel filter debug") { _ in
                 
                 Log.removeFilter(flag: .debug)
                 Log.debug("You can see the log in the console!")
                 
-                return (nil, true)
+                return (nil, false)
             },
             DataSource(title: "Filter the logs of the current page") { _ in
                 
@@ -87,7 +87,31 @@ class ViewModel {
                 Log.debug("This log will not be printed on the console, so you will not see it")
                 Logger.note("Unless another log manager is used to print logs (variables used to store filter conditions are not shared among each log manager)")
                 
-                return (nil, true)
+                return (nil, false)
+            },
+        ]),
+        
+        SectionDataSource(title: "Store", dataSource: [
+            DataSource(title: "Read today's disk cache") { _ in
+                
+                return (LogListViewController(logs: Log.readLogFromDisk()), true)
+            },
+            DataSource(title: "Clear today's disk cache") { _ in
+                
+                switch Log.removeLogFromDisk() {
+                    
+                case .success:
+                    Log.success("Clear the cache successfully")
+                    
+                case .failure(let error):
+                    Log.error("Failed to clear cache: \(error)")
+                }
+                
+                return (LogListViewController(logs: Log.readLogFromDisk()), true)
+            },
+            DataSource(title: "Read yesterday's disk cache") { _ in
+                
+                return (LogListViewController(logs: Log.readLogFromDisk(days: 1)), true)
             },
         ]),
     ]
