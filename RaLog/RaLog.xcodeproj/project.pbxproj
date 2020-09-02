@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6B240C24FF2BA30089367D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B240A24FF2BA30089367D /* README.md */; };
+		3A6B240D24FF2BA30089367D /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B240B24FF2BA30089367D /* README_CN.md */; };
 		3AE8830924FE3A0600A862BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8830824FE3A0600A862BE /* AppDelegate.swift */; };
 		3AE8830D24FE3A0600A862BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8830C24FE3A0600A862BE /* ViewController.swift */; };
 		3AE8831024FE3A0600A862BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8830E24FE3A0600A862BE /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A6B240A24FF2BA30089367D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		3A6B240B24FF2BA30089367D /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_CN.md; path = ../../README_CN.md; sourceTree = "<group>"; };
 		3AE8830524FE3A0600A862BE /* RaLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE8830824FE3A0600A862BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE8830C24FE3A0600A862BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		3AE8830724FE3A0600A862BE /* RaLog */ = {
 			isa = PBXGroup;
 			children = (
+				3A6B240A24FF2BA30089367D /* README.md */,
+				3A6B240B24FF2BA30089367D /* README_CN.md */,
 				3AE8833D24FE3BD800A862BE /* push.sh */,
 				3AE8833C24FE3BD800A862BE /* RaLog.podspec */,
 				3AE8832A24FE3A1900A862BE /* Core */,
@@ -214,6 +220,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6B240C24FF2BA30089367D /* README.md in Resources */,
+				3A6B240D24FF2BA30089367D /* README_CN.md in Resources */,
 				3AE8831524FE3A0B00A862BE /* LaunchScreen.storyboard in Resources */,
 				3AE8831224FE3A0B00A862BE /* Assets.xcassets in Resources */,
 				3AE8833E24FE3BD800A862BE /* RaLog.podspec in Resources */,
