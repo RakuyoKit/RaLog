@@ -15,6 +15,7 @@
 		3A6B243D24FF32650089367D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B243C24FF32650089367D /* ViewModel.swift */; };
 		3A6B264B24FF3D5E0089367D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B264A24FF3D5E0089367D /* Model.swift */; };
 		3A6B264D24FF3EE60089367D /* AnotherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B264C24FF3EE60089367D /* AnotherController.swift */; };
+		3A6B284524FF49180089367D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B284424FF49180089367D /* Logger.swift */; };
 		A72A0CB15B294BF08C43532F /* Pods_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34D77ABD4C74C16A56688DE /* Pods_Examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		3A6B243C24FF32650089367D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3A6B264A24FF3D5E0089367D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3A6B264C24FF3EE60089367D /* AnotherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherController.swift; sourceTree = "<group>"; };
+		3A6B284424FF49180089367D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5E57FD7548007E50B7445629 /* Pods-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples.release.xcconfig"; path = "Target Support Files/Pods-Examples/Pods-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		B34D77ABD4C74C16A56688DE /* Pods_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6B241A24FF31E80089367D /* AppDelegate.swift */,
+				3A6B284424FF49180089367D /* Logger.swift */,
 				3A6B264A24FF3D5E0089367D /* Model.swift */,
 				3A6B243C24FF32650089367D /* ViewModel.swift */,
 				3A6B241E24FF31E80089367D /* ViewController.swift */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6B241F24FF31E80089367D /* ViewController.swift in Sources */,
+				3A6B284524FF49180089367D /* Logger.swift in Sources */,
 				3A6B243D24FF32650089367D /* ViewModel.swift in Sources */,
 				3A6B264D24FF3EE60089367D /* AnotherController.swift in Sources */,
 				3A6B241B24FF31E80089367D /* AppDelegate.swift in Sources */,

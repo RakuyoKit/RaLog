@@ -39,7 +39,57 @@ class ViewModel {
                 
                 return (UINavigationController(rootViewController: AnotherController()), false)
             }
-        ])
+        ]),
+        
+        SectionDataSource(title: "Custom Log", dataSource: [
+            DataSource(title: "Curry") { _ in
+                
+                Logger.p("Use currying call form")(.curry)
+                
+                return (nil, true)
+            },
+            DataSource(title: "Custom Flag") { _ in
+                
+                Logger.note("This log is identified by '<\(Log.Flag.note)>'")
+                
+                return (nil, true)
+            },
+            DataSource(title: "Set Module separately for a log") { _ in
+                
+                Logger.note("Please note the changes in [Module]", module: "RaLog_Demo")
+                
+                return (nil, true)
+            }
+        ]),
+        
+        SectionDataSource(title: "Filter", dataSource: [
+            DataSource(title: "Filter logs identified by debug") { _ in
+                
+                Log.warning("The log with the debug flag will be filtered, and all future logs with the debug flag will not be printed on the console")
+                Log.addFilter(flag: .debug)
+                Log.debug("This log will not be printed on the console, so you will not see it")
+                
+                return (nil, true)
+            },
+            DataSource(title: "Cancel filter debug") { _ in
+                
+                Log.removeFilter(flag: .debug)
+                Log.debug("You can see the log in the console!")
+                
+                return (nil, true)
+            },
+            DataSource(title: "Filter the logs of the current page") { _ in
+                
+                Log.warning("About to filter the logs of the current page, all the logs of the current page will not be output in the console")
+                
+                Log.fileterCurrentFileLogs()
+                
+                Log.debug("This log will not be printed on the console, so you will not see it")
+                Logger.note("Unless another log manager is used to print logs (variables used to store filter conditions are not shared among each log manager)")
+                
+                return (nil, true)
+            },
+        ]),
     ]
 }
 

@@ -29,6 +29,8 @@ extension ViewController {
         title = "RaLog demo"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        
+        Log.debug("Note the output of the console")
     }
     
     open override func viewWillAppear(_ animated: Bool) {
