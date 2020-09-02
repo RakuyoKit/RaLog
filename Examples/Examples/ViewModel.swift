@@ -15,7 +15,7 @@ class ViewModel {
     /// List data source
     lazy var dataSource: [SectionDataSource] = [
         
-        SectionDataSource(title: "Request api", dataSource: [
+        SectionDataSource(title: "Basic", dataSource: [
             DataSource(title: "Request an api that will succeed") { _ in
                 self.request(needSuccess: true, callback: { _ in })
                 return (nil, false)
