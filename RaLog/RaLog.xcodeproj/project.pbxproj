@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A6B240C24FF2BA30089367D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B240A24FF2BA30089367D /* README.md */; };
 		3A6B240D24FF2BA30089367D /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B240B24FF2BA30089367D /* README_CN.md */; };
+		3AA06569252078FD007A60CA /* LogModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA06568252078FD007A60CA /* LogModelProtocol.swift */; };
 		3AE8830924FE3A0600A862BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8830824FE3A0600A862BE /* AppDelegate.swift */; };
 		3AE8830D24FE3A0600A862BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8830C24FE3A0600A862BE /* ViewController.swift */; };
 		3AE8831024FE3A0600A862BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8830E24FE3A0600A862BE /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		3A6B240A24FF2BA30089367D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		3A6B240B24FF2BA30089367D /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_CN.md; path = ../../README_CN.md; sourceTree = "<group>"; };
+		3AA06568252078FD007A60CA /* LogModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModelProtocol.swift; sourceTree = "<group>"; };
 		3AE8830524FE3A0600A862BE /* RaLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE8830824FE3A0600A862BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE8830C24FE3A0600A862BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				3AE8833124FE3A8200A862BE /* Printable.swift */,
 				3AE8833224FE3A8300A862BE /* Filterable.swift */,
 				3AE8833024FE3A8200A862BE /* Storable.swift */,
+				3AA06568252078FD007A60CA /* LogModelProtocol.swift */,
 				3AE8832E24FE3A8200A862BE /* Log.swift */,
 				3AE8832F24FE3A8200A862BE /* Built-in.swift */,
 			);
@@ -250,6 +253,7 @@
 				3AE8833424FE3A8300A862BE /* Built-in.swift in Sources */,
 				3AE8830924FE3A0600A862BE /* AppDelegate.swift in Sources */,
 				3AE8833324FE3A8300A862BE /* Log.swift in Sources */,
+				3AA06569252078FD007A60CA /* LogModelProtocol.swift in Sources */,
 				3AE8833624FE3A8300A862BE /* Printable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

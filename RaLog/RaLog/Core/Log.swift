@@ -12,7 +12,7 @@ import Foundation
 ///
 /// It can also be used to perform some log operations.
 /// See `Printable`, `Storable` and `Filterable` to learn more
-open class Log: Codable, Printable, Storable, Filterable {
+open class Log: LogModelProtocol, Printable, Storable, Filterable {
     
     /// Log identifier
     public typealias Flag = String
