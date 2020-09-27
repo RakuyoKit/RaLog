@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Protocol
 
-/// Provide the ability to filter logs by certain options
+/// Provide the ability to filter logs by certain options.
 public protocol Filterable {
     
     /// Actually responsible for filtering the log.
@@ -21,8 +21,8 @@ public protocol Filterable {
     /// return filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
     /// ```
     ///
-    /// - Parameter log: Log that judged whether they need to be filtered
-    /// - Returns: Return `true` to prohibit printing
+    /// - Parameter log: Log that judged whether they need to be filtered.
+    /// - Returns: Return `true` to prohibit printing.
     static func filter(_ log: Log) -> Bool
     
     // MARK: - Filter Flag
@@ -39,12 +39,12 @@ public protocol Filterable {
     
     /// Filter a `Log.Flag`.
     ///
-    /// - Parameter flag: `Log.Flag` filtered
+    /// - Parameter flag: `Log.Flag` filtered.
     static func addFilter(flag: Log.Flag ...)
     
     /// Remove the filtering of a `Log.Flag`.
     ///
-    /// - Parameter flag: `Log.Flag` whose filter is removed
+    /// - Parameter flag: `Log.Flag` whose filter is removed.
     static func removeFilter(flag: Log.Flag ...)
     
     // MARK: - Filter File

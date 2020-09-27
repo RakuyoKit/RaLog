@@ -11,10 +11,10 @@ import Foundation
 /// A model for storing log data.
 ///
 /// It can also be used to perform some log operations.
-/// See `Printable`, `Storable` and `Filterable` to learn more
+/// See `Printable`, `Storable` and `Filterable` to learn more.
 open class Log: LogModelProtocol, Printable, Storable, Filterable {
     
-    /// Log identifier
+    /// Log identifier.
     public typealias Flag = String
     
     public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil) {
@@ -52,33 +52,33 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
         }
     }
     
-    /// The actual content to be printed
+    /// The actual content to be printed.
     open var log: Any?
     
-    /// Use the string "nil" to unpack the `log` attribute
+    /// Use the string "nil" to unpack the `log` attribute.
     public let safeLog: String
     
-    /// The name of the file to print the log
+    /// The name of the file to print the log.
     open var file: String
     
-    /// The name of the method to print the log
+    /// The name of the method to print the log.
     open var function: String
     
-    /// The number of the lines to print the log
+    /// The number of the lines to print the log.
     open var line: Int
     
-    /// Flag of log
+    /// Flag of log.
     open var flag: Flag
     
-    /// The module to which the log belongs
+    /// The module to which the log belongs.
     open var module: String
     
-    /// Timestamp when the model was created
+    /// Timestamp when the model was created.
     ///
-    /// Can be understood as the time when the log is printed
+    /// Can be understood as the time when the log is printed.
     open var timestamp: TimeInterval = Date().timeIntervalSince1970
     
-    /// `timestamp` after formatting with `HH:mm:ss:SSS`
+    /// `timestamp` after formatting with `HH:mm:ss:SSS`.
     public let formatTime: String
     
     /// What actually printed.
@@ -120,7 +120,7 @@ extension Log: Equatable {
     
     public static func == (lhs: Log, rhs: Log) -> Bool {
         
-        // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`
+        // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`.
         return lhs.timestamp == rhs.timestamp
             && lhs.line      == rhs.line
             && lhs.file  == rhs.file
@@ -133,7 +133,7 @@ extension Log: Equatable {
 
 private extension Log {
     
-    /// Cache `DateFormatter` object
+    /// Cache `DateFormatter` object.
     static let formatter = { () -> DateFormatter in
         let dateFormatter = DateFormatter()
         

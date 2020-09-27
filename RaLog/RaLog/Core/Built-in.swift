@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Built-in log identifier
+/// Built-in log identifier.
 public extension Log.Flag {
     
     static let debug      : Log.Flag = "👾 Debug"
@@ -20,9 +20,9 @@ public extension Log.Flag {
     static let javascript : Log.Flag = "🔥 Javascript"
 }
 
-/// Built-in prefix log
+/// Built-in prefix log.
 ///
-/// e.g. `Log.debug(self)`
+/// e.g. `Log.debug(self)`.
 public extension Printable {
     
     @inline(__always) @discardableResult

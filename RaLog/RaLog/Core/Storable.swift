@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Enum
 
-/// Used to specify the location of cache storage
+/// Used to specify the location of cache storage.
 public struct StorageMode: OptionSet {
     
     public let rawValue: Int
@@ -19,25 +19,25 @@ public struct StorageMode: OptionSet {
         self.rawValue = rawValue
     }
     
-    /// Storage on disk
+    /// Storage on disk.
     public static let disk = StorageMode(rawValue: 1 << 0)
     
-    /// Cached on memory
+    /// Cached on memory.
     public static let memory = StorageMode(rawValue: 1 << 1)
     
-    /// `.disk` & `.memory`
+    /// `.disk` & `.memory`.
     public static let all: StorageMode = [ .disk, .memory ]
 }
 
 // MARK: - Protocol
 
-/// Provide the ability to store logs
+/// Provide the ability to store logs.
 public protocol Storable {
     
-    /// Storage mode, the default is `.all`. Namely disk cache and memory cache
+    /// Storage mode, the default is `.all`. Namely disk cache and memory cache.
     static var storageMode: StorageMode { get }
     
-    /// An array to store all logs. See the `store(_:)` method for details
+    /// An array to store all logs. See the `store(_:)` method for details.
     static var logs: [Log] { get set }
     
     /// The full path of the log storage file on the disk.
@@ -51,7 +51,7 @@ public protocol Storable {
     /// ```
     static var filePath: String { get }
     
-    /// Store log
+    /// Store log.
     ///
     /// The default implementation will do the following:
     ///
@@ -64,56 +64,56 @@ public protocol Storable {
     /// - Attention:
     ///     The above operations are effective in both `DEBUG` and `RELEASE` modes. You can implement this method yourself to change this logic.
     ///
-    /// - Parameter log: The `Log` to be stored
+    /// - Parameter log: The `Log` to be stored.
     static func store(_ log: Log)
     
-    /// Read the log data of the date corresponding to `logDate` cached in the disk
+    /// Read the log data of the date corresponding to `logDate` cached in the disk.
     ///
-    /// The default implementation realizes the function of reading the log data of the day by default by adding the default parameter of `logDate = Date()`
+    /// The default implementation realizes the function of reading the log data of the day by default by adding the default parameter of `logDate = Date()`.
     ///
     /// - Note:
-    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to read log data from the disk
+    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to read log data from the disk.
     ///
-    /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`
+    /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`.
     static func readLogFromDisk(logDate: Date) -> [Log]?
     
-    /// Delete the log data of the date corresponding to `logDate` cached in the disk
+    /// Delete the log data of the date corresponding to `logDate` cached in the disk.
     ///
-    /// The default implementation realizes the function of deleting the log data of the day by default by adding the default parameter of `logDate = Date()`
+    /// The default implementation realizes the function of deleting the log data of the day by default by adding the default parameter of `logDate = Date()`.
     ///
     /// - Note:
-    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to delete log data from the disk
+    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to delete log data from the disk.
     ///
-    /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`
+    /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`.
     /// - Return: When the deletion is successful, it will return `.success(())`, otherwise it will return an error message.
     static func removeLogFromDisk(logDate: Date) -> Result<Void, Error>
 }
 
 // MARK: - Extension
 
-/// Strategy of break method execution
+/// Strategy of break method execution.
 public enum BreakStrategy {
     
-    /// Will not interrupt the method early
+    /// Will not interrupt the method early.
     case never
     
-    /// Method execution will be interrupted after `count` errors
+    /// Method execution will be interrupted after `count` errors.
     case continuous(count: Int)
     
-    /// Method execution will be interrupted after accumulating `count` errors
+    /// Method execution will be interrupted after accumulating `count` errors.
     case grandTotal(count: Int)
 }
 
 public extension Storable {
     
-    /// Read the log of the previous `days`
+    /// Read the log of the previous `days`.
     ///
     /// When `days` is 1, it means to read the log of the previous day, that is, the log of **yesterday**.
     /// When `days` is 2, it means to read the log of the previous 2 days, that is, the log of **days before yesterday**.
     /// And so on
     ///
-    /// - Parameter days: Heaven number
-    /// - Returns: Log data of the day
+    /// - Parameter days: Heaven number.
+    /// - Returns: Log data of the day.
     static func readLogFromDisk(days: Int) -> [Log]? {
         
         let aTimeInterval = Date().timeIntervalSinceReferenceDate + Double(-days * 86400)

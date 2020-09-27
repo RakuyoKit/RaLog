@@ -10,30 +10,30 @@ import Foundation
 
 // MARK: - Protocol
 
-/// Provide the ability to format and print logs
+/// Provide the ability to format and print logs.
 public protocol Printable {
     
-    /// Used to format the `log` parameter
+    /// Used to format the `log` parameter.
     ///
-    /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details
-    /// - Returns: The formatted string can be printed directly
+    /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details.
+    /// - Returns: The formatted string can be printed directly.
     @inline(__always)
     static func format(_ log: Log) -> String
     
-    /// Print the `log` parameter
+    /// Print the `log` parameter.
     ///
     /// The default implementation:
     ///
-    /// 1. Call the `format(_:)` method to format the parameter `log` and assign it to `logedStr`
-    /// 2. Determine whether the log needs to be filtered, and print the log when no filtering is required
-    /// 3. Determine whether to store the log
-    /// 4. Return the log model
+    /// 1. Call the `format(_:)` method to format the parameter `log` and assign it to `logedStr`.
+    /// 2. Determine whether the log needs to be filtered, and print the log when no filtering is required.
+    /// 3. Determine whether to store the log.
+    /// 4. Return the log model.
     ///
     /// - Attention:
     ///     The first and second steps mentioned above are only effective in `DEBUG` mode. This means that the value of `logedStr` is meaningful only in `DEBUG` mode. You can change the implementation, for example, let it perform the same operation in `RELEASE` mode
     ///
-    /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details
-    /// - Returns: log model
+    /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details.
+    /// - Returns: log model.
     @inline(__always) @discardableResult
     static func print(_ log: Log) -> Log
 }
