@@ -18,7 +18,7 @@ public protocol Printable {
     /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details.
     /// - Returns: The formatted string can be printed directly.
     @inline(__always)
-    static func format(_ log: Log) -> String
+    static func format(_ log: LogModelProtocol) -> String
     
     /// Print the `log` parameter.
     ///
@@ -35,7 +35,7 @@ public protocol Printable {
     /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details.
     /// - Returns: log model.
     @inline(__always) @discardableResult
-    static func print(_ log: Log) -> Log
+    static func print<T: LogModelProtocol>(_ log: T) -> T
 }
 
 // MARK: - Default
@@ -43,7 +43,7 @@ public protocol Printable {
 public extension Printable {
     
     @inline(__always)
-    static func format(_ log: Log) -> String {
+    static func format(_ log: LogModelProtocol) -> String {
         
         return """
         
@@ -54,7 +54,7 @@ public extension Printable {
     }
     
     @inline(__always) @discardableResult
-    static func print(_ log: Log) -> Log {
+    static func print<T: LogModelProtocol>(_ log: T) -> T {
         
         #if DEBUG
         

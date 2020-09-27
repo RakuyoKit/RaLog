@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol LogModelProtocol: Codable {
+public protocol LogModelProtocol: class, Codable {
     
     /// The actual content to be printed.
     var log: Any? { get set }
@@ -33,4 +33,7 @@ public protocol LogModelProtocol: Codable {
     
     /// Time to print.
     var formatTime: String { get }
+    
+    /// What actually printed.
+    var logedStr: String { get set }
 }

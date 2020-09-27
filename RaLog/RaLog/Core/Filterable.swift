@@ -23,7 +23,7 @@ public protocol Filterable {
     ///
     /// - Parameter log: Log that judged whether they need to be filtered.
     /// - Returns: Return `true` to prohibit printing.
-    static func filter(_ log: Log) -> Bool
+    static func filter(_ log: LogModelProtocol) -> Bool
     
     // MARK: - Filter Flag
     
@@ -65,7 +65,7 @@ public protocol Filterable {
 public extension Filterable {
     
     @inline(__always)
-    static func filter(_ log: Log) -> Bool {
+    static func filter(_ log: LogModelProtocol) -> Bool {
         return filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
     }
 }
