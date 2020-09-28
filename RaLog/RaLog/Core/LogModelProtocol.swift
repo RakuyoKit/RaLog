@@ -31,6 +31,11 @@ public protocol LogModelProtocol: class, Codable {
     /// The module to which the log belongs.
     var module: String { get set }
     
+    /// Timestamp when the model was created.
+    ///
+    /// Can be understood as the time when the log is printed.
+    var timestamp: TimeInterval { get set }
+    
     /// Time to print.
     var formatTime: String { get }
     
