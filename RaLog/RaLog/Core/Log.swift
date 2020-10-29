@@ -43,12 +43,12 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
             }
             
             else {
-                self.module = "RaLog"
+                self.module = Self.appName ?? "RaLog"
             }
             
         } else {
             self.file = file
-            self.module = module ?? "RaLog"
+            self.module = module ?? Self.appName ?? "RaLog"
         }
     }
     
@@ -83,6 +83,35 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     
     /// What actually printed.
     open var logedStr: String = ""
+    
+    /// Cache the name of the currently running app.
+    private static let appName: String? = {
+        
+        let _infoDic: [String : Any]? = {
+            
+            if let infoDict = Bundle.main.localizedInfoDictionary {
+                return infoDict
+            }
+            
+            if let infoDict = Bundle.main.infoDictionary {
+                return infoDict
+            }
+            
+            if let path = Bundle.main.path(forResource: "Info", ofType: "plist"),
+                let infoDict = NSDictionary(contentsOfFile: path) as? [String : Any] {
+                return infoDict
+            }
+            
+            return nil
+        }()
+        
+        guard let infoDic = _infoDic else { return nil }
+        
+        let displayName = infoDic["CFBundleDisplayName"] as? String
+        let bundleName = infoDic["CFBundleName"] as? String
+        
+        return displayName ?? bundleName
+    }()
 }
 
 private extension Log {
