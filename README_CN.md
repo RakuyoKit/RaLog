@@ -38,7 +38,7 @@ pod 'RaLog'
 
 ## 使用
 
-相关内容请参考 wiki: [快速入门](https://github.com/rakuyoMo/RaLog/wiki/快速入门)。
+相关内容请参考 wiki: [快速入门](https://github.com/rakuyoMo/RaLog/wiki/快速开始)。
 
 ## 预览
 
