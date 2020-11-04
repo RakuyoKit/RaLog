@@ -26,7 +26,7 @@ public extension Printable {
 
 enum Logger: Printable, Storable, Filterable {
     
-    static func format(_ log: Log) -> String {
+    static func format(_ log: LogModelProtocol) -> String {
         
         // Custom print style
         return """
