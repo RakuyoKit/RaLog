@@ -32,11 +32,12 @@ pod 'RaLog'
 
 ## Features
 
+- [x] Out of the box, easy to configure.
 - [x] Print objects or values like `print` or `NSLog`.
 - [x] Provide **disk cache** and **memory cache** two cache modes.
-- [x] Support **filter** log printing according to file or log identifier.
+- [x] Support **filter** log printing according to file or log flag.
 - [x] **Protocol-oriented**, provides a very high degree of freedom for you to customize log operations.
-- [x] Out of the box, easy to configure.
+- [x] Cooperate with [ColaCup](https://github.com/rakuyoMo/ColaCup) to view log data visually.
 
 ## Usage
 

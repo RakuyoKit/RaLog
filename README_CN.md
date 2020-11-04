@@ -30,15 +30,16 @@ pod 'RaLog'
 
 ## 功能
 
+- [x] 开箱即用，配置简单。
 - [x] 像 `print` 或 `NSLog` 一样打印对象或值。
 - [x] 提供**磁盘缓存**与**内存缓存**两种缓存模式。
-- [x] 支持按照文件或日志标识**过滤**日志打印。
+- [x] 支持按照文件或日志分类**过滤**日志打印。
 - [x] **面向协议**，提供非常高的自由度，供您自定义日志操作。
-- [x] 开箱即用，配置简单。
+- [x] 配合 [ColaCup](https://github.com/rakuyoMo/ColaCup)，可视化的查看日志数据。
 
 ## 使用
 
-相关内容请参考 wiki: [快速入门](https://github.com/rakuyoMo/RaLog/wiki/快速开始)。
+相关内容请参考 wiki: [快速开始](https://github.com/rakuyoMo/RaLog/wiki/快速开始)。
 
 ## 预览
 
