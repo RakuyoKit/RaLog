@@ -12,15 +12,15 @@
 
 > [中文](https://github.com/rakuyoMo/RaLog/blob/master/README_CN.md)
  
- `RaLog` is a protocol-oriented and highly customizable lightweight logging framework.
+`RaLog` is a lightweight, highly customizable, protocol-oriented logging framework.
 
- By using the framework to provide default types or custom management classes, you can quickly build your own log component.
+By using the types provided by the framework, or custom management classes, you can quickly build your own logging component.
 
 ## Prerequisites
 
-- **iOS 10 or later**.
-- **Xcode 10.0 or later** required.
-- **Swift 5.0 or later** required.
+- Devices running **iOS 10** and above.
+- Compiled with **Xcode 10** and above.
+- **Swift 5.0** and above.
 
 ## Install
 
@@ -33,23 +33,21 @@ pod 'RaLog'
 ## Features
 
 - [x] Out of the box, easy to configure.
-- [x] Print objects or values like `print` or `NSLog`.
-- [x] Provide **disk cache** and **memory cache** two cache modes.
-- [x] Support **filter** log printing according to file or log flag.
-- [x] **Protocol-oriented**, provides a very high degree of freedom for you to customize log operations.
-- [x] Cooperate with [ColaCup](https://github.com/rakuyoMo/ColaCup) to view log data visually.
+- [x] Prints objects or values like `print` or `NSLog`.
+- [x] Provides two caching modes: **disk cache** and **memory cache**.
+- [x] Supports **filtering** log by file or log category.
+- [x] **Protocol oriented**, provides a very high degree of freedom to customize logging operations.
+- [x] can be used with [ColaCup](https://github.com/rakuyoMo/ColaCup) to view log data visually.
 
 ## Usage
 
-For related content, please refer to wiki: [Quick Start](https://github.com/rakuyoMo/RaLog/wiki/Quick-start).
+For related content, see wiki: [Quick Start](https://github.com/rakuyoMo/RaLog/wiki/Quick-start).
 
 ## Preview
 
-The following code shows how to use `RaLog` for simple log printing.
+The following code shows how to use `RaLog` for simple log printing. With this code, you will get a first look at `RaLog`.
 
-With this code, you can have a preliminary impression of `RaLog`:
-
-> For more functions and complete sample code, please refer to the demo provided with the warehouse (under the `Examples` directory).
+> More functional demos, as well as complete sample code, can be found in the demo provided with the repository (in the `Examples` directory).
 
 ```swift
 import UIKit
@@ -94,7 +92,7 @@ class ViewController: UIViewController {
 }
 ```
 
-When entering the `ViewController`, the console will output the following:
+When the `ViewController` controller is about to be accessed, the console will output the following.
 
 ```
 
@@ -117,4 +115,4 @@ When entering the `ViewController`, the console will output the following:
 
 ## License
 
-`RaLog` is available under the **MIT** license. See the [LICENSE](https://github.com/rakuyoMo/RaLog/blob/master/LICENSE) file for more info.
+`RaLog` is available under the **MIT** license. For more information, see [LICENSE](https://github.com/rakuyoMo/RaLog/blob/master/LICENSE).
