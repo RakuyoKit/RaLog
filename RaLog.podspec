@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
   
   s.version          = '1.2.2'
   
-  s.summary          = 'A log component'
+  s.summary          = 'A logging framework.'
   
-  s.description      = 'Protocol-oriented and highly customizable log component'
+  s.description      = 'A lightweight, highly customizable , protocol-oriented logging framework.'
   
   s.homepage         = 'https://github.com/rakuyoMo/RaLog'
   
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   
   s.module_name      = 'RaLog'
   
-  s.source_files     = 'RaLog/RaLog/Core/*'
+  s.source_files     = 'Source/RaLog/*'
   
 end
