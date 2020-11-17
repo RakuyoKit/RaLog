@@ -65,7 +65,7 @@
 		3A26402C256395EC0094FE63 = {
 			isa = PBXGroup;
 			children = (
-				3A264038256395EC0094FE63 /* Source */,
+				3A264038256395EC0094FE63 /* Sources */,
 				3A264043256395EC0094FE63 /* RaLogTests */,
 				3A264037256395EC0094FE63 /* Products */,
 			);
@@ -80,14 +80,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3A264038256395EC0094FE63 /* Source */ = {
+		3A264038256395EC0094FE63 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				3A264039256395EC0094FE63 /* RaLog.h */,
 				3A26403A256395EC0094FE63 /* Info.plist */,
 				3A264054256396590094FE63 /* RaLog */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		3A264043256395EC0094FE63 /* RaLogTests */ = {
