@@ -18,7 +18,7 @@ By using the types provided by the framework, or custom management classes, you 
 
 ## Prerequisites
 
-- Devices running **iOS 10 / macOS 10.15** and above.
+- Devices running **iOS 10** and above.
 - Compiled with **Xcode 10** and above.
 - **Swift 5.0** and above.
 
