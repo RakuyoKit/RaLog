@@ -16,7 +16,7 @@
 
 ## 基本要求
 
-- 运行 **iOS 10** 及以上版本的设备。
+- 运行 **iOS 10 / macOS 10.15** 及以上版本的设备。
 - 使用 **Xcode 10** 及以上版本编译。
 - **Swift 5.0** 以及以上版本。
 
@@ -26,6 +26,12 @@
 
 ```ruby
 pod 'RaLog'
+```
+
+### Swift Package Manager
+
+```swift
+.Package(url: "https://github.com/rakuyoMo/RaLog.git", ...)
 ```
 
 ## 功能

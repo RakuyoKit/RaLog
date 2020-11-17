@@ -18,7 +18,7 @@ By using the types provided by the framework, or custom management classes, you 
 
 ## Prerequisites
 
-- Devices running **iOS 10** and above.
+- Devices running **iOS 10 / macOS 10.15** and above.
 - Compiled with **Xcode 10** and above.
 - **Swift 5.0** and above.
 
@@ -28,6 +28,12 @@ By using the types provided by the framework, or custom management classes, you 
 
 ```ruby
 pod 'RaLog'
+```
+
+### Swift Package Manager
+
+```swift
+.Package(url: "https://github.com/rakuyoMo/RaLog.git", ...)
 ```
 
 ## Features
