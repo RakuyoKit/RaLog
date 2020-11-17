@@ -2,7 +2,7 @@
 //  RaLog.h
 //  RaLog
 //
-//  Created by MBCore on 2020/11/17.
+//  Created by Rakuyo on 2020/11/17.
 //
 
 #import <Foundation/Foundation.h>
