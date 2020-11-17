@@ -8,13 +8,12 @@
 
 import Foundation
 
-/// A model for storing log data.
+/// Log data model. You can also perform log operations with this type.
 ///
-/// It can also be used to perform some log operations.
 /// See `Printable`, `Storable` and `Filterable` to learn more.
 open class Log: LogModelProtocol, Printable, Storable, Filterable {
     
-    /// Log identifier.
+    /// Log identifier. RaLog uses this type to distinguish logs for different purposes.
     public typealias Flag = String
     
     public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil) {
@@ -37,7 +36,7 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
                 self.module = module
             }
             
-            // Use the first-level subdirectory under the pods path as the module name
+            // Use the first-level subdirectory of the pods path as the module name.
             else if let index = components.firstIndex(of: "Pods") {
                 self.module = components[index + 1]
             }
@@ -52,36 +51,36 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
         }
     }
     
-    /// The actual content to be printed.
+    /// The raw data object to be printed by the user.
     open var log: Any?
     
-    /// Use the string "nil" to unpack the `log` attribute.
+    /// Use `"nil"` to unpack the `log` attribute.
     public let safeLog: String
     
-    /// The name of the file to print the log.
+    /// The name of the module to which the log belongs.
+    open var module: String
+    
+    /// The name of the file to which the log belongs.
     open var file: String
     
-    /// The name of the method to print the log.
+    /// The name of the function in which the log is located.
     open var function: String
     
-    /// The number of the lines to print the log.
+    /// The line number where the log is located.
     open var line: Int
     
     /// Flag of log.
     open var flag: Flag
     
-    /// The module to which the log belongs.
-    open var module: String
-    
-    /// Timestamp when the model was created.
+    /// The time stamp when the model was created.
     ///
-    /// Can be understood as the time when the log is printed.
+    /// It can also be understood as the time to print this log.
     open var timestamp: TimeInterval = Date().timeIntervalSince1970
     
-    /// `timestamp` after formatting with `HH:mm:ss:SSS`.
+    /// Content after `timestamp` formatted using `HH:mm:ss:SSS`.
     public let formatTime: String
     
-    /// What actually printed.
+    /// The output in the console.
     open var logedStr: String = ""
     
     /// Cache the name of the currently running app.

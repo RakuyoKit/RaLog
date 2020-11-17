@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Protocol
 
-/// Provide the ability to filter logs by certain options.
+/// Provide a way to filter logs. 
 public protocol Filterable {
     
     /// Actually responsible for filtering the log.

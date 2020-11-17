@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Protocol
 
-/// Provide the ability to format and print logs.
+/// Provide a way to format the data and output the formatted content to the console.
 public protocol Printable {
     
     /// Used to format the `log` parameter.

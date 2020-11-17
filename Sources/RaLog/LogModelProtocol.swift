@@ -8,37 +8,40 @@
 
 import Foundation
 
+/// Log Data Protocol.
+///
+/// Used to restrict the data fields that a log data type must contain.
 public protocol LogModelProtocol: class, Codable {
     
-    /// The actual content to be printed.
+    /// The raw data object to be printed by the user.
     var log: Any? { get set }
     
-    /// Use the string "nil" to unpack the `log` attribute.
+    /// Use `"nil"` to unpack the `log` attribute.
     var safeLog: String { get }
     
-    /// The name of the file to print the log.
+    /// The name of the module to which the log belongs.
+    var module: String { get set }
+    
+    /// The name of the file to which the log belongs.
     var file: String { get set }
     
-    /// The name of the method to print the log.
+    /// The name of the function in which the log is located.
     var function: String { get set }
     
-    /// The number of the lines to print the log.
+    /// The line number where the log is located.
     var line: Int { get set }
     
     /// Flag of log.
     var flag: Log.Flag { get set }
     
-    /// The module to which the log belongs.
-    var module: String { get set }
-    
-    /// Timestamp when the model was created.
+    /// The time stamp when the model was created.
     ///
-    /// Can be understood as the time when the log is printed.
+    /// It can also be understood as the time to print this log.
     var timestamp: TimeInterval { get set }
     
-    /// Time to print.
+    /// Content after `timestamp` formatted.
     var formatTime: String { get }
     
-    /// What actually printed.
+    /// The output in the console.
     var logedStr: String { get set }
 }

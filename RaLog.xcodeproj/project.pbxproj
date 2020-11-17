@@ -92,12 +92,12 @@
 		3A264054256396590094FE63 /* RaLog */ = {
 			isa = PBXGroup;
 			children = (
-				3A264055256396590094FE63 /* Log.swift */,
 				3A264056256396590094FE63 /* LogModelProtocol.swift */,
+				3A264055256396590094FE63 /* Log.swift */,
 				3A264057256396590094FE63 /* Printable.swift */,
 				3A264058256396590094FE63 /* Storable.swift */,
-				3A264059256396590094FE63 /* Built-in.swift */,
 				3A26405A256396590094FE63 /* Filterable.swift */,
+				3A264059256396590094FE63 /* Built-in.swift */,
 			);
 			path = RaLog;
 			sourceTree = "<group>";
