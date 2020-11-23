@@ -16,7 +16,6 @@
 		3A26405F2563965A0094FE63 /* Built-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A264059256396590094FE63 /* Built-in.swift */; };
 		3A2640602563965A0094FE63 /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A26405A256396590094FE63 /* Filterable.swift */; };
 		3A7047BA256B4E8F00177761 /* WebView+RaLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7047B9256B4E8F00177761 /* WebView+RaLog.swift */; };
-		3A7047BE256B4F4800177761 /* Extendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7047BD256B4F4800177761 /* Extendable.swift */; };
 		3A7FE15325639F3F0056C741 /* RaLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FE15025639F3F0056C741 /* RaLogTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		3A264059256396590094FE63 /* Built-in.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Built-in.swift"; sourceTree = "<group>"; };
 		3A26405A256396590094FE63 /* Filterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
 		3A7047B9256B4E8F00177761 /* WebView+RaLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebView+RaLog.swift"; sourceTree = "<group>"; };
-		3A7047BD256B4F4800177761 /* Extendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extendable.swift; sourceTree = "<group>"; };
 		3A7FE15025639F3F0056C741 /* RaLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaLogTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +100,6 @@
 				3A264058256396590094FE63 /* Storable.swift */,
 				3A26405A256396590094FE63 /* Filterable.swift */,
 				3A264059256396590094FE63 /* Built-in.swift */,
-				3A7047BD256B4F4800177761 /* Extendable.swift */,
 				3A7047B9256B4E8F00177761 /* WebView+RaLog.swift */,
 			);
 			path = RaLog;
@@ -239,7 +236,6 @@
 				3A26405B2563965A0094FE63 /* Log.swift in Sources */,
 				3A26405F2563965A0094FE63 /* Built-in.swift in Sources */,
 				3A26405D2563965A0094FE63 /* Printable.swift in Sources */,
-				3A7047BE256B4F4800177761 /* Extendable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
