@@ -29,7 +29,9 @@ public extension RaLogCompatible {
     }
 }
 
-extension WKWebView: RaLogCompatible {
+extension WKWebView: RaLogCompatible {}
+
+public extension RaLogWrapper where Base: WKWebView {
     
     /// Add script to WKWebView for intercepting `console.log`.
     ///
@@ -47,13 +49,13 @@ extension WKWebView: RaLogCompatible {
     ///   - post: Used to control how WebView passes logs to the native.
     ///   - injectionTime: When the script should be injected. Default is `.atDocumentEnd`
     ///   - isForMainFrameOnly: Whether the script should be injected into all frames or just the main frame. Default is `false`
-    public func addCaptureLogsScript(
+    func addCaptureLogsScript(
         post: ((_ param: String) -> String)? = nil,
         injectionTime: WKUserScriptInjectionTime = .atDocumentEnd,
         isForMainFrameOnly: Bool = false
     ) {
         
-        configuration.userContentController.addUserScript(WKUserScript(source: """
+        base.configuration.userContentController.addUserScript(WKUserScript(source: """
             console.log = (function(oriLogFunc){
             return function(str)
                 {
