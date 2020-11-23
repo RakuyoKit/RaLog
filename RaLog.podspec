@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   
   s.name             = 'RaLog'
   
-  s.version          = '1.4.0'
+  s.version          = '1.4.1'
   
   s.summary          = 'A logging framework.'
   
