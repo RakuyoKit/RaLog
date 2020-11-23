@@ -384,7 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202011231138;
+				CURRENT_PROJECT_VERSION = 202011231319;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AP85W7ZKHS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -398,7 +398,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLog;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -411,7 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202011231138;
+				CURRENT_PROJECT_VERSION = 202011231319;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AP85W7ZKHS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -425,7 +425,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rakuyo.RaLog;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
