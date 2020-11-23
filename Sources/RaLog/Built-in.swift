@@ -17,7 +17,6 @@ public extension Log.Flag {
     static let error      : Log.Flag = "❌ Error"
     static let `deinit`   : Log.Flag = "⁉️ Deinit"
     static let jump       : Log.Flag = "👋 Jump"
-    static let javascript : Log.Flag = "🔥 Javascript"
 }
 
 /// Built-in prefix log.
@@ -62,13 +61,6 @@ public extension Printable {
         _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p(kLog, module: module, file: file, function: function, line: line)(.error)
-    }
-    
-    @inline(__always) @discardableResult
-    static func javascript(
-        _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
-    ) -> Log {
-        return p(kLog, module: module, file: file, function: function, line: line)(.javascript)
     }
     
     @inline(__always) @discardableResult
