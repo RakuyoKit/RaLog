@@ -5,11 +5,11 @@ Pod::Spec.new do |s|
   
   s.name             = 'RaLog'
   
-  s.version          = '1.2.3'
+  s.version          = '1.3.0'
   
   s.summary          = 'A logging framework.'
   
-  s.description      = 'A lightweight, highly customizable , protocol-oriented logging framework.'
+  s.description      = 'A lightweight, highly customizable, protocol-oriented logging framework.'
   
   s.homepage         = 'https://github.com/rakuyoMo/RaLog'
   
