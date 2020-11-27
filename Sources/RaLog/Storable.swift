@@ -288,7 +288,7 @@ public extension Storable {
         guard storageMode.contains(.disk) else { return }
         
         guard let data = try? JSONEncoder().encode(log),
-            var content = String(data: data, encoding: .utf8) else {
+              var content = String(data: data, encoding: .utf8) else {
                 
                 // If the encoding fails, it will not be written to the file.
                 return
@@ -313,17 +313,10 @@ public extension Storable {
             content = "[" + content
         }
         
-        guard let resultData = (content + "]").data(using: .utf8),
-            let fileHandle = FileHandle(forWritingAtPath: filePath) else { return }
+        guard let resultData = content.data(using: .utf8),
+              let fileHandle = FileHandle(forWritingAtPath: filePath) else { return }
         
         fileHandle.seekToEndOfFile()
-        
-        let offsetInFile = fileHandle.offsetInFile
-        
-        // Cover the last one "]"
-        if _fastPath(offsetInFile > 1) {
-            fileHandle.seek(toFileOffset: offsetInFile - 1)
-        }
         
         // Write file in append form
         fileHandle.write(resultData)
@@ -335,8 +328,10 @@ public extension Storable {
         
         let filePath = dirPath + "/" + "\(cacheDateFormatter.string(from: logDate)).log"
         
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return nil }
-        return try? JSONDecoder().decode([T].self, from: data)
+        guard let endData = "]".data(using: .utf8),
+              let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return nil }
+        
+        return try? JSONDecoder().decode([T].self, from: data + endData)
     }
     
     static func removeLogFromDisk(logDate: Date = Date()) -> Result<Void, Error> {
