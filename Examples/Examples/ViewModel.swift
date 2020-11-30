@@ -27,6 +27,10 @@ class ViewModel {
             DataSource(title: "Request an api with random results") {
                 self.requestRandom(at: $0, callback: { _ in })
                 return (nil, false)
+            },
+            DataSource(title: "Request multiple requests") { _ in
+                self.requestMultipleRequests()
+                return (nil, false)
             }
         ]),
         
@@ -189,5 +193,22 @@ private extension ViewModel {
                 callback(.failure(error))
             }
         }
+    }
+    
+    func requestMultipleRequests() {
+        
+        func _emulate(log content: String, after: Int) {
+            
+            DispatchQueue.global().async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(after)) {
+                    Log.debug(content)
+                }
+            }
+        }
+        
+        _emulate(log: "First request", after: 1000)
+        _emulate(log: "Second request", after: 1005)
+        _emulate(log: "Third request", after: 1100)
+        _emulate(log: "Fourth request", after: 1050)
     }
 }
