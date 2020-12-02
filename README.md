@@ -1,5 +1,3 @@
-# RaLog
-
 <p align="center">
 <img src="https://raw.githubusercontent.com/rakuyoMo/RaLog/master/Images/logo.png" alt="RaLog" title="RaLog" width="1000"/>
 </p>
