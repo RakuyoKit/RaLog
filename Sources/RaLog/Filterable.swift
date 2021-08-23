@@ -72,25 +72,11 @@ public extension Filterable {
 
 // MARK: Flag
 
-private var _filteredFlagsKey = "_raLog_filteredFlagsKey"
-
 public extension Filterable {
     
     static var filteredFlags: Set<Log.Flag> {
-        get {
-            guard let kFilteredFlags = objc_getAssociatedObject(self, &_filteredFlagsKey) as? Set<Log.Flag> else {
-                
-                let kFilteredFlags = Set<Log.Flag>()
-                objc_setAssociatedObject(self, &_filteredFlagsKey, kFilteredFlags, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                
-                return kFilteredFlags
-            }
-            
-            return kFilteredFlags
-        }
-        set {
-            objc_setAssociatedObject(self, &_filteredFlagsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+        get { Wrapper.shared.filteredFlags }
+        set { Wrapper.shared.filteredFlags = newValue }
     }
     
     static func addFilter(flag: Log.Flag ...) {
@@ -104,26 +90,11 @@ public extension Filterable {
 
 // MARK: File
 
-private var _filteredFilesKey = "_raLog_filteredFilesKey"
-
 public extension Filterable {
     
     static var filteredFiles: Set<String> {
-        get {
-            
-            guard let kFilteredFiles = objc_getAssociatedObject(self, &_filteredFilesKey) as? Set<String> else {
-                
-                let kFilteredFiles = Set<String>()
-                objc_setAssociatedObject(self, &_filteredFilesKey, kFilteredFiles, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                
-                return kFilteredFiles
-            }
-            
-            return kFilteredFiles
-        }
-        set {
-            objc_setAssociatedObject(self, &_filteredFilesKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+        get { Wrapper.shared.filteredFiles }
+        set { Wrapper.shared.filteredFiles = newValue }
     }
     
     static func fileterCurrentFileLogs(_ file: String = #file) {

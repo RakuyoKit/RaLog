@@ -254,17 +254,8 @@ private var _logsKey = "_raLog_logsKey"
 public extension Storable {
     
      static var logs: [LogModelProtocol] {
-        get {
-            guard let kLogs = objc_getAssociatedObject(self, &_logsKey) as? [LogModelProtocol] else {
-                objc_setAssociatedObject(self, &_logsKey, [], .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                return []
-            }
-            
-            return kLogs
-        }
-        set {
-            objc_setAssociatedObject(self, &_logsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+        get { Wrapper.shared.logs }
+        set { Wrapper.shared.logs = newValue }
     }
     
     static var storageMode: StorageMode { .all }
@@ -351,27 +342,6 @@ public extension Storable {
 
 // MARK: - Tools
 
-private var _cacheDateFormatterKey = "_raLog_cacheDateFormatterKey"
-
 fileprivate extension Storable {
-    
-    /// Cache `DateFormatter` object
-    static var cacheDateFormatter: DateFormatter {
-        get {
-            guard let kCacheDateFormatter = objc_getAssociatedObject(self, &_cacheDateFormatterKey) as? DateFormatter else {
-                
-                let kCacheDateFormatter = DateFormatter()
-                kCacheDateFormatter.dateFormat = "yyyy_MM_dd"
-                
-                objc_setAssociatedObject(self, &_cacheDateFormatterKey, kCacheDateFormatter, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                
-                return kCacheDateFormatter
-            }
-            
-            return kCacheDateFormatter
-        }
-        set {
-            objc_setAssociatedObject(self, &_cacheDateFormatterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
+    static var cacheDateFormatter: DateFormatter { Wrapper.shared.cacheDateFormatter }
 }
