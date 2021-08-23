@@ -17,6 +17,7 @@
 		3A2640602563965A0094FE63 /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A26405A256396590094FE63 /* Filterable.swift */; };
 		3A7047BA256B4E8F00177761 /* WebView+RaLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7047B9256B4E8F00177761 /* WebView+RaLog.swift */; };
 		3A7FE15325639F3F0056C741 /* RaLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FE15025639F3F0056C741 /* RaLogTests.swift */; };
+		AE162E3B26D382FB0043DEF0 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE162E3A26D382FB0043DEF0 /* Wrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		3A26405A256396590094FE63 /* Filterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
 		3A7047B9256B4E8F00177761 /* WebView+RaLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebView+RaLog.swift"; sourceTree = "<group>"; };
 		3A7FE15025639F3F0056C741 /* RaLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaLogTests.swift; sourceTree = "<group>"; };
+		AE162E3A26D382FB0043DEF0 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				3A264057256396590094FE63 /* Printable.swift */,
 				3A264058256396590094FE63 /* Storable.swift */,
 				3A26405A256396590094FE63 /* Filterable.swift */,
+				AE162E3A26D382FB0043DEF0 /* Wrapper.swift */,
 				3A264059256396590094FE63 /* Built-in.swift */,
 				3A7047B9256B4E8F00177761 /* WebView+RaLog.swift */,
 			);
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A26405C2563965A0094FE63 /* LogModelProtocol.swift in Sources */,
+				AE162E3B26D382FB0043DEF0 /* Wrapper.swift in Sources */,
 				3A2640602563965A0094FE63 /* Filterable.swift in Sources */,
 				3A26405E2563965A0094FE63 /* Storable.swift in Sources */,
 				3A7047BA256B4E8F00177761 /* WebView+RaLog.swift in Sources */,
