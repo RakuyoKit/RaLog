@@ -3,14 +3,13 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import UIKit
 
 /// Built-in log identifier.
 public extension Log.Flag {
-    
     static let debug      : Log.Flag = "👾 Debug"
     static let warning    : Log.Flag = "⚠️ Warning"
     static let success    : Log.Flag = "✅ Success"
@@ -23,18 +22,15 @@ public extension Log.Flag {
 ///
 /// e.g. `Log.debug(self)`.
 public extension Printable {
-    
     @inline(__always) @discardableResult
     static func p(
         _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> (Log.Flag) -> Log {
-        
         return { print(Log(kLog, file: file, function: function, line: line, flag: $0, module: module)) }
     }
 }
 
 public extension Printable {
-    
     @inline(__always) @discardableResult
     static func debug(
         _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line

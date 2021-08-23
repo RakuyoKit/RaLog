@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2021/08/23.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import Foundation

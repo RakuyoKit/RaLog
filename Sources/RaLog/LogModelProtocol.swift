@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/9/27.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import Foundation
@@ -11,8 +11,7 @@ import Foundation
 /// Log Data Protocol.
 ///
 /// Used to restrict the data fields that a log data type must contain.
-public protocol LogModelProtocol: class, Codable {
-    
+public protocol LogModelProtocol: AnyObject, Codable {
     /// The raw data object to be printed by the user.
     var log: Any? { get set }
     

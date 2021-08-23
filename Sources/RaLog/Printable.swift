@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,6 @@ import Foundation
 
 /// Provide a way to format the data and output the formatted content to the console.
 public protocol Printable {
-    
     /// Used to format the `log` parameter.
     ///
     /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details.
@@ -41,10 +40,8 @@ public protocol Printable {
 // MARK: - Default
 
 public extension Printable {
-    
     @inline(__always)
     static func format(_ log: LogModelProtocol) -> String {
-        
         return """
         
         [↓ In `\(log.function)` of \(log.file):\(log.line) ↓]
@@ -55,7 +52,6 @@ public extension Printable {
     
     @inline(__always) @discardableResult
     static func print<T: LogModelProtocol>(_ log: T) -> T {
-        
         #if DEBUG
         
         // 1. store format log

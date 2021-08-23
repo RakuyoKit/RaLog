@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,6 @@ import Foundation
 
 /// Provide a way to filter logs. 
 public protocol Filterable {
-    
     /// Actually responsible for filtering the log.
     ///
     /// The default implementation:
@@ -63,7 +62,6 @@ public protocol Filterable {
 // MARK: - Default
 
 public extension Filterable {
-    
     @inline(__always)
     static func filter(_ log: LogModelProtocol) -> Bool {
         return filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
@@ -73,7 +71,6 @@ public extension Filterable {
 // MARK: Flag
 
 public extension Filterable {
-    
     static var filteredFlags: Set<Log.Flag> {
         get { Wrapper.shared.filteredFlags }
         set { Wrapper.shared.filteredFlags = newValue }
@@ -91,14 +88,12 @@ public extension Filterable {
 // MARK: File
 
 public extension Filterable {
-    
     static var filteredFiles: Set<String> {
         get { Wrapper.shared.filteredFiles }
         set { Wrapper.shared.filteredFiles = newValue }
     }
     
     static func fileterCurrentFileLogs(_ file: String = #file) {
-        
         let fileName = Log("", file: file, function: "", line: 0, flag: Log.Flag(""), module: "").file
         filteredFiles.insert(fileName)
     }
