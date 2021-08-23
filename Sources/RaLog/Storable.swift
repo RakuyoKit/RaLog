@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,6 @@ import Foundation
 
 /// Used to specify the location of cache storage.
 public struct StorageMode: OptionSet {
-    
     public let rawValue: Int
     
     public init(rawValue: Self.RawValue) {
@@ -33,7 +32,6 @@ public struct StorageMode: OptionSet {
 
 /// Provide the ability for storing log data.
 public protocol Storable {
-    
     /// Storage mode, the default is `.all`. Namely disk cache and memory cache.
     static var storageMode: StorageMode { get }
     
@@ -93,7 +91,6 @@ public protocol Storable {
 
 /// Strategy of break method execution.
 public enum BreakStrategy {
-    
     /// Will not interrupt the method early.
     case never
     
@@ -105,7 +102,6 @@ public enum BreakStrategy {
 }
 
 public extension Storable {
-    
     /// Read the log of the previous `days`.
     ///
     /// When `days` is 1, it means to read the log of the previous day, that is, the log of **yesterday**.
@@ -115,7 +111,6 @@ public extension Storable {
     /// - Parameter days: Heaven number.
     /// - Returns: Log data of the day.
     static func readLogFromDisk<T: LogModelProtocol>(days: Int) -> [T]? {
-        
         let aTimeInterval = Date().timeIntervalSinceReferenceDate + Double(-days * 86400)
         return readLogFromDisk(logDate: Date(timeIntervalSinceReferenceDate: aTimeInterval))
     }
@@ -143,7 +138,6 @@ public extension Storable {
         days: C,
         strategy: BreakStrategy = .never
     ) -> [[T]?]? where C.Element == Int {
-        
         var logs: [[T]?] = []
         var failureCount = 0
         
@@ -199,13 +193,11 @@ public extension Storable {
         strategy: BreakStrategy = .never,
         complete completeBlock: ((_ isComplete: Bool, Error?) -> Void)? = nil
     ) where T.Element == Int {
-        
         defer { completeBlock?(true, nil) }
         
         var failureCount = 0
         
         for time in days {
-            
             let aTimeInterval = Date().timeIntervalSinceReferenceDate + Double(-time * 86400)
             
             let result = removeLogFromDisk(logDate: Date(timeIntervalSinceReferenceDate: aTimeInterval))
@@ -213,14 +205,14 @@ public extension Storable {
             switch strategy {
             case .never:
                 switch result {
-                case .success(_): break
+                case .success: break
                 case .failure(let error): completeBlock?(false, error)
                 }
                 
             case .continuous(let count):
                 
                 switch result {
-                case .success(_):
+                case .success:
                     
                     // reset to 0
                     failureCount = 0
@@ -235,7 +227,7 @@ public extension Storable {
             case .grandTotal(let count):
                 
                 switch result {
-                case .success(_): break
+                case .success: break
                 case .failure(let error):
                     failureCount += 1
                     completeBlock?(false, error)
@@ -249,22 +241,11 @@ public extension Storable {
 
 // MARK: - Default
 
-private var _logsKey = "_raLog_logsKey"
-
 public extension Storable {
     
      static var logs: [LogModelProtocol] {
-        get {
-            guard let kLogs = objc_getAssociatedObject(self, &_logsKey) as? [LogModelProtocol] else {
-                objc_setAssociatedObject(self, &_logsKey, [], .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                return []
-            }
-            
-            return kLogs
-        }
-        set {
-            objc_setAssociatedObject(self, &_logsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+        get { Wrapper.shared.logs }
+        set { Wrapper.shared.logs = newValue }
     }
     
     static var storageMode: StorageMode { .all }
@@ -280,7 +261,6 @@ public extension Storable {
     static var filePath: String { dirPath + "/" + fileName }
     
     static func store<T: LogModelProtocol>(_ log: T) {
-        
         if storageMode.contains(.memory) {
             logs += [log]
         }
@@ -325,7 +305,6 @@ public extension Storable {
     }
     
     static func readLogFromDisk<T: LogModelProtocol>(logDate: Date = Date()) -> [T]? {
-        
         let filePath = dirPath + "/" + "\(cacheDateFormatter.string(from: logDate)).log"
         
         guard let endData = "]".data(using: .utf8),
@@ -335,9 +314,7 @@ public extension Storable {
     }
     
     static func removeLogFromDisk(logDate: Date = Date()) -> Result<Void, Error> {
-        
         do {
-            
             let filePath = dirPath + "/" + "\(cacheDateFormatter.string(from: logDate)).log"
             
             try FileManager.default.removeItem(atPath: filePath)
@@ -351,27 +328,6 @@ public extension Storable {
 
 // MARK: - Tools
 
-private var _cacheDateFormatterKey = "_raLog_cacheDateFormatterKey"
-
 fileprivate extension Storable {
-    
-    /// Cache `DateFormatter` object
-    static var cacheDateFormatter: DateFormatter {
-        get {
-            guard let kCacheDateFormatter = objc_getAssociatedObject(self, &_cacheDateFormatterKey) as? DateFormatter else {
-                
-                let kCacheDateFormatter = DateFormatter()
-                kCacheDateFormatter.dateFormat = "yyyy_MM_dd"
-                
-                objc_setAssociatedObject(self, &_cacheDateFormatterKey, kCacheDateFormatter, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                
-                return kCacheDateFormatter
-            }
-            
-            return kCacheDateFormatter
-        }
-        set {
-            objc_setAssociatedObject(self, &_cacheDateFormatterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
+    static var cacheDateFormatter: DateFormatter { Wrapper.shared.cacheDateFormatter }
 }

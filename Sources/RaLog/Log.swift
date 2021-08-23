@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/09/01.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import Foundation
@@ -12,12 +12,10 @@ import Foundation
 ///
 /// See `Printable`, `Storable` and `Filterable` to learn more.
 open class Log: LogModelProtocol, Printable, Storable, Filterable {
-    
     /// Log identifier. RaLog uses this type to distinguish logs for different purposes.
     public typealias Flag = String
     
     public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil) {
-        
         self.log = log
         self.function = function
         self.line = line
@@ -85,7 +83,6 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     
     /// Cache the name of the currently running app.
     private static let appName: String? = {
-        
         let _infoDic: [String : Any]? = {
             
             if let infoDict = Bundle.main.localizedInfoDictionary {
@@ -114,9 +111,7 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
 }
 
 private extension Log {
-    
     enum CodingKeys: String, CodingKey {
-        
         case file
         case function
         case line
@@ -132,7 +127,6 @@ private extension Log {
 // MARK: - Hashable
 
 extension Log: Hashable {
-    
     open func hash(into hasher: inout Hasher) {
         hasher.combine(timestamp)
         hasher.combine(line)
@@ -145,9 +139,7 @@ extension Log: Hashable {
 // MARK: - Equatable
 
 extension Log: Equatable {
-    
     public static func == (lhs: Log, rhs: Log) -> Bool {
-        
         // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`.
         return lhs.timestamp == rhs.timestamp
             && lhs.line      == rhs.line
@@ -160,7 +152,6 @@ extension Log: Equatable {
 // MARK: - Tools
 
 private extension Log {
-    
     /// Cache `DateFormatter` object.
     static let formatter = { () -> DateFormatter in
         let dateFormatter = DateFormatter()
@@ -174,10 +165,9 @@ private extension Log {
     }()
     
     static func encode<T>(displayInfo info: T) -> String? where T : Encodable {
-        
         guard let data = try? JSONEncoder().encode(info),
-            let infoString = String(data: data, encoding: .utf8) else {
-                return nil
+              let infoString = String(data: data, encoding: .utf8) else {
+            return nil
         }
         
         return infoString

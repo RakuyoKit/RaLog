@@ -3,7 +3,7 @@
 //  RaLog
 //
 //  Created by Rakuyo on 2020/11/23.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
 import WebKit
@@ -11,7 +11,6 @@ import WebKit
 /// Wrapper for RaLog compatible types.
 /// This type provides an extension point for connivence methods in RaLog.
 public struct RaLogWrapper<Base> {
-    
     public var base: Base
     public init(_ base: Base) { self.base = base }
 }
@@ -21,7 +20,6 @@ public struct RaLogWrapper<Base> {
 public protocol RaLogCompatible { }
 
 public extension RaLogCompatible {
-    
     /// Gets a namespace holder for Kingfisher compatible types.
     var rl: RaLogWrapper<Self> {
         get { return RaLogWrapper(self) }
@@ -54,7 +52,6 @@ public extension RaLogWrapper where Base: WKWebView {
         injectionTime: WKUserScriptInjectionTime = .atDocumentEnd,
         isForMainFrameOnly: Bool = false
     ) {
-        
         base.configuration.userContentController.addUserScript(WKUserScript(source: """
             console.log = (function(oriLogFunc){
             return function(str)
@@ -69,17 +66,14 @@ public extension RaLogWrapper where Base: WKWebView {
 }
 
 public extension Log.Flag {
-    
     static let javascript : Log.Flag = "🔥 Javascript"
 }
 
 public extension Printable {
-    
     @inline(__always) @discardableResult
     static func javascript(
         _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
-        
         let _log = {
             return p($0, module: module, file: $1, function: function, line: $2)(.javascript)
         }
