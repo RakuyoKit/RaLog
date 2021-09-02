@@ -1,5 +1,5 @@
 PODS:
-  - RaLog (1.2.2)
+  - RaLog (1.5.0)
   - SnapKit (5.0.1)
   - Then (2.7.0)
 
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  RaLog: 39353f487e5a62373389933d16477f1b70e8ae6d
+  RaLog: 6e5fa0cedd233b198ceb0d7cd8f85ae740e6e0fa
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
 PODFILE CHECKSUM: de6e9da6966576a8b1ef1290f6e367cfe6602c29
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.3
