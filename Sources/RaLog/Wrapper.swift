@@ -13,10 +13,13 @@ class Wrapper {
     /// Singleton object
     static let shared = Wrapper()
     
+    @Atomic
     var logs: [LogModelProtocol] = []
     
+    @Atomic
     var filteredFlags = Set<Log.Flag>()
     
+    @Atomic
     var filteredFiles = Set<String>()
     
     let cacheDateFormatter = DateFormatter()
