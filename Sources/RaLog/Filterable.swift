@@ -70,10 +70,20 @@ public extension Filterable {
 
 // MARK: Flag
 
+private let flagLock = NSLock()
+
 public extension Filterable {
     static var filteredFlags: Set<Log.Flag> {
-        get { Wrapper.shared.filteredFlags }
-        set { Wrapper.shared.filteredFlags = newValue }
+        get {
+            flagLock.lock()
+            defer { flagLock.unlock() }
+            return Wrapper.shared.filteredFlags
+        }
+        set {
+            flagLock.lock()
+            defer { flagLock.unlock() }
+            Wrapper.shared.filteredFlags = newValue
+        }
     }
     
     static func addFilter(flag: Log.Flag ...) {
@@ -87,10 +97,20 @@ public extension Filterable {
 
 // MARK: File
 
+private let fileLock = NSLock()
+
 public extension Filterable {
     static var filteredFiles: Set<String> {
-        get { Wrapper.shared.filteredFiles }
-        set { Wrapper.shared.filteredFiles = newValue }
+        get {
+            fileLock.lock()
+            defer { fileLock.unlock() }
+            return Wrapper.shared.filteredFiles
+        }
+        set {
+            fileLock.lock()
+            defer { fileLock.unlock() }
+            Wrapper.shared.filteredFiles = newValue
+        }
     }
     
     static func fileterCurrentFileLogs(_ file: String = #file) {
