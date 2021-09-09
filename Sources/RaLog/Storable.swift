@@ -241,11 +241,20 @@ public extension Storable {
 
 // MARK: - Default
 
+private let logsLock = NSLock()
+
 public extension Storable {
-    
-     static var logs: [LogModelProtocol] {
-        get { Wrapper.shared.logs }
-        set { Wrapper.shared.logs = newValue }
+    static var logs: [LogModelProtocol] {
+        get {
+            logsLock.lock()
+            defer { logsLock.unlock() }
+            return Wrapper.shared.logs
+        }
+        set {
+            logsLock.lock()
+            defer { logsLock.unlock() }
+            Wrapper.shared.logs = newValue
+        }
     }
     
     static var storageMode: StorageMode { .all }
