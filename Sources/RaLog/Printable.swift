@@ -53,7 +53,6 @@ public extension Printable {
     @inline(__always) @discardableResult
     static func print<T: LogModelProtocol>(_ log: T) -> T {
         #if DEBUG
-        
         // 1. store format log
         log.logedStr = self.format(log)
         
@@ -62,12 +61,11 @@ public extension Printable {
             Swift.print(log.logedStr)
         }
         
-        #endif
-        
         // 3. store
         if let storable = self as? Storable.Type {
             storable.store(log)
         }
+        #endif
         
         // 4. return
         return log
