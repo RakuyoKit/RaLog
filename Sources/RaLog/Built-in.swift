@@ -10,12 +10,12 @@ import UIKit
 
 /// Built-in log identifier.
 public extension Log.Flag {
-    static let debug      : Log.Flag = "👾 Debug"
-    static let warning    : Log.Flag = "⚠️ Warning"
-    static let success    : Log.Flag = "✅ Success"
-    static let error      : Log.Flag = "❌ Error"
-    static let `deinit`   : Log.Flag = "⁉️ Deinit"
-    static let jump       : Log.Flag = "👋 Jump"
+    static let debug: Log.Flag = "👾 Debug"
+    static let warning: Log.Flag = "⚠️ Warning"
+    static let success: Log.Flag = "✅ Success"
+    static let error: Log.Flag = "❌ Error"
+    static let `deinit`: Log.Flag = "⁉️ Deinit"
+    static let jump: Log.Flag = "👋 Jump"
 }
 
 /// Built-in prefix log.
