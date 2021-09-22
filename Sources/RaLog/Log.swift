@@ -142,10 +142,10 @@ extension Log: Equatable {
     public static func == (lhs: Log, rhs: Log) -> Bool {
         // The `timestamp` & `line` is enough to filter out most cases, and finally judge the `logedStr`.
         return lhs.timestamp == rhs.timestamp
-            && lhs.line      == rhs.line
-            && lhs.file  == rhs.file
-            && lhs.safeLog   == rhs.safeLog
-            && lhs.logedStr  == rhs.logedStr
+            && lhs.line == rhs.line
+            && lhs.file == rhs.file
+            && lhs.safeLog == rhs.safeLog
+            && lhs.logedStr == rhs.logedStr
     }
 }
 

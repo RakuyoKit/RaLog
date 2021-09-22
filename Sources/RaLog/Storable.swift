@@ -210,10 +210,8 @@ public extension Storable {
                 }
                 
             case .continuous(let count):
-                
                 switch result {
                 case .success:
-                    
                     // reset to 0
                     failureCount = 0
                     
@@ -225,7 +223,6 @@ public extension Storable {
                 }
                 
             case .grandTotal(let count):
-                
                 switch result {
                 case .success: break
                 case .failure(let error):
