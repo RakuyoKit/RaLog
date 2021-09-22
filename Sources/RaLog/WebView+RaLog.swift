@@ -30,7 +30,6 @@ public extension RaLogCompatible {
 extension WKWebView: RaLogCompatible {}
 
 public extension RaLogWrapper where Base: WKWebView {
-    
     /// Add script to WKWebView for intercepting `console.log`.
     ///
     /// When the post closure is `nil` (default), the following method will be used to pass data to the native:
