@@ -27,9 +27,7 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
         self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
         
         if _fastPath(file.contains("/")) {
-            
             let components = file.components(separatedBy: "/")
-            
             self.file = components.last ?? "Failed to get file"
             
             if let module = module  {
@@ -40,7 +38,6 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
             else if let index = components.firstIndex(of: "Pods") {
                 self.module = components[index + 1]
             }
-            
             else {
                 self.module = Self.appName ?? "RaLog"
             }
