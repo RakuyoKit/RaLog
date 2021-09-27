@@ -71,10 +71,10 @@ public extension Log.Flag {
 public extension Printable {
     @inline(__always) @discardableResult
     static func javascript(
-        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line, identifier: String? = nil
     ) -> Log {
         let _log = {
-            return p($0, module: module, file: $1, function: function, line: $2)(.javascript)
+            return p($0, module: module, file: $1, function: function, line: $2, identifier: identifier)(.javascript)
         }
         
         guard let param = kLog as? [String : String], let content = param["content"] else {
