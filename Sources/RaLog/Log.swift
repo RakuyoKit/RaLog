@@ -15,11 +15,12 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     /// Log identifier. RaLog uses this type to distinguish logs for different purposes.
     public typealias Flag = String
     
-    public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil) {
+    public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil, identifier: String? = nil) {
         self.log = log
         self.function = function
         self.line = line
         self.flag = flag
+        self.identifier = identifier
         
         self.safeLog = "\(log ?? "nil")"
         self.formatTime = Log.formatter.string(from: Date(timeIntervalSince1970: timestamp))
@@ -81,6 +82,10 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     /// The output in the console.
     open var logedStr: String = ""
     
+    /// A unique identifier for the log.
+    /// You are free to use this value to add certain tags to the log.
+    public var identifier: String?
+    
     /// Cache the name of the currently running app.
     private static let appName: String? = {
         let _infoDic: [String : Any]? = {
@@ -121,6 +126,7 @@ private extension Log {
         case timestamp
         case formatTime
         case logedStr
+        case identifier
     }
 }
 
@@ -133,6 +139,7 @@ extension Log: Hashable {
         hasher.combine(file)
         hasher.combine(safeLog)
         hasher.combine(logedStr)
+        hasher.combine(identifier)
     }
 }
 
@@ -146,6 +153,7 @@ extension Log: Equatable {
             && lhs.file == rhs.file
             && lhs.safeLog == rhs.safeLog
             && lhs.logedStr == rhs.logedStr
+            && lhs.identifier == rhs.identifier
     }
 }
 

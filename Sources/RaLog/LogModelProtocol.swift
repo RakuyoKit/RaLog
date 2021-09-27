@@ -43,4 +43,8 @@ public protocol LogModelProtocol: AnyObject, Codable {
     
     /// The output in the console.
     var logedStr: String { get set }
+    
+    /// A unique identifier for the log.
+    /// You are free to use this value to add certain tags to the log.
+    var identifier: String? { get set }
 }
