@@ -19,7 +19,7 @@ public protocol LogModelProtocol: AnyObject, Codable {
     var safeLog: String { get }
     
     /// The name of the module to which the log belongs.
-    var module: String { get set }
+    var module: Log.Module { get set }
     
     /// The name of the file to which the log belongs.
     var file: String { get set }

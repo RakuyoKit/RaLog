@@ -14,8 +14,9 @@ import Foundation
 open class Log: LogModelProtocol, Printable, Storable, Filterable {
     /// Log identifier. RaLog uses this type to distinguish logs for different purposes.
     public typealias Flag = String
+    public typealias Module = String
     
-    public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: String? = nil, identifier: String? = nil) {
+    public init(_ log: Any?, file: String, function: String, line: Int, flag: Flag, module: Module? = nil, identifier: String? = nil) {
         self.log = log
         self.function = function
         self.line = line
@@ -57,7 +58,7 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     public let safeLog: String
     
     /// The name of the module to which the log belongs.
-    open var module: String
+    open var module: Module
     
     /// The name of the file to which the log belongs.
     open var file: String
@@ -89,7 +90,6 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     /// Cache the name of the currently running app.
     private static let appName: String? = {
         let _infoDic: [String : Any]? = {
-            
             if let infoDict = Bundle.main.localizedInfoDictionary {
                 return infoDict
             }

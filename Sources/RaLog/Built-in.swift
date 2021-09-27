@@ -24,7 +24,7 @@ public extension Log.Flag {
 public extension Printable {
     @inline(__always) @discardableResult
     static func p(
-        _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> (Log.Flag) -> Log {
         return { print(Log(kLog, file: file, function: function, line: line, flag: $0, module: module)) }
     }
@@ -33,35 +33,35 @@ public extension Printable {
 public extension Printable {
     @inline(__always) @discardableResult
     static func debug(
-        _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p(kLog, module: module, file: file, function: function, line: line)(.debug)
     }
     
     @inline(__always) @discardableResult
     static func warning(
-        _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p(kLog, module: module, file: file, function: function, line: line)(.warning)
     }
     
     @inline(__always) @discardableResult
     static func success(
-        _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p(kLog, module: module, file: file, function: function, line: line)(.success)
     }
     
     @inline(__always) @discardableResult
     static func error(
-        _ kLog: Any?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p(kLog, module: module, file: file, function: function, line: line)(.error)
     }
     
     @inline(__always) @discardableResult
     static func `deinit`(
-        _ obj: AnyObject?, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ obj: AnyObject?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         
         let loged: Any = obj == nil ? "nil" : obj!
@@ -70,14 +70,14 @@ public extension Printable {
     
     @inline(__always) @discardableResult
     static func appear<V: UIViewController>(
-        _ controller: V, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ controller: V, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p("- Appear - \(type(of: controller))", module: module, file: file, function: function, line: line)(.jump)
     }
     
     @inline(__always) @discardableResult
     static func disappear<V: UIViewController>(
-        _ controller: V, module: String? = nil, file: String = #file, function: String = #function, line: Int = #line
+        _ controller: V, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line
     ) -> Log {
         return p("- Disappear - \(type(of: controller))", module: module, file: file, function: function, line: line)(.jump)
     }
