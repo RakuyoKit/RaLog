@@ -130,7 +130,7 @@ private extension Log {
 // MARK: - Hashable
 
 extension Log: Hashable {
-    open func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(timestamp)
         hasher.combine(line)
         hasher.combine(file)
