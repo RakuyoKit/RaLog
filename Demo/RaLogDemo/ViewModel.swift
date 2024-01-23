@@ -1,9 +1,9 @@
 //
 //  ViewModel.swift
-//  RaLogExamples
+//  RaLogDemo
 //
 //  Created by Rakuyo on 2020/09/02.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Copyright © 2024 Rakuyo. All rights reserved.
 //
 
 import UIKit

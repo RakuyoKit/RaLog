@@ -1,10 +1,10 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.1
 
 import PackageDescription
 
 let package = Package(
     name: "RaLog",
-    platforms: [.iOS(.v10)],
+    platforms: [.iOS(.v10)], // , .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)
     products: [
         .library(name: "RaLog", targets: ["RaLog"])
     ],

@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
   
   s.module_name      = 'RaLog'
   
-  s.source_files     = 'Sources/RaLog/*'
+  s.source_files     = 'Sources/*'
   
 end

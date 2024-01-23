@@ -1,9 +1,9 @@
 //
 //  Logger.swift
-//  Examples
+//  RaLogDemo
 //
-//  Created by MBCore on 2020/9/2.
-//  Copyright © 2020 Rakuyo. All rights reserved.
+//  Created by Rakuyo on 2020/9/2.
+//  Copyright © 2024 Rakuyo. All rights reserved.
 //
 
 import RaLog
