@@ -12,13 +12,17 @@ let package = Package(
         .visionOS(.v1)
     ],
     products: [
-        .library(name: "RaLog", targets: ["RaLog"])
+        .library(
+            name: "RaLog",
+            targets: ["RaLog"]),
     ],
     targets: [
         .target(
             name: "RaLog",
             path: "Sources",
-            resources: [.copy("PrivacyInfo.xcprivacy")]
-        )
+            resources: [.copy("PrivacyInfo.xcprivacy")]),
+        .testTarget(
+            name: "RaLogTests",
+            dependencies: ["RaLog"]),
     ]
 )

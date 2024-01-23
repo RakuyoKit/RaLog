@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-<a><img src="https://img.shields.io/badge/language-swift-ffac45.svg"></a>
+<a href="https://swiftpackageindex.com/RakuyoKit/RaLog"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FRakuyoKit%2FRaLog%2Fbadge%3Ftype%3Dswift-versions"></a>
+<a href="https://swiftpackageindex.com/RakuyoKit/RaLog"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FRakuyoKit%2FRaLog%2Fbadge%3Ftype%3Dplatforms"></a>
 <a href="https://cocoapods.org/pods/RaLog"><img src="https://img.shields.io/github/v/tag/RakuyoKit/RaLog.svg?include_prereleases=&sort=semver"></a>
 <a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat"></a>
 <a href="https://raw.githubusercontent.com/RakuyoKit/RaLog/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-black"></a>
