@@ -6,6 +6,7 @@
 //  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
+#if canImport(WebKit)
 import WebKit
 
 extension WKWebView: RaLogCompatible {}
@@ -74,3 +75,4 @@ public extension Printable {
         return _log(content, _file, _line)
     }
 }
+#endif

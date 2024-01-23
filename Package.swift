@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "RaLog",
-    platforms: [.iOS(.v10)], // , .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)
+    platforms: [.iOS(.v10), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
     products: [
         .library(name: "RaLog", targets: ["RaLog"])
     ],

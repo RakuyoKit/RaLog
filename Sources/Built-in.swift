@@ -6,7 +6,7 @@
 //  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// Built-in log identifier.
 public extension Log.Flag {
@@ -67,7 +67,12 @@ public extension Printable {
         let loged: Any = obj == nil ? "nil" : obj!
         return p("\(loged) was deinit", module: module, file: file, function: function, line: line, identifier: identifier)(.deinit)
     }
-    
+}
+
+#if !os(watchOS) && canImport(UIKit)
+import UIKit
+
+public extension Printable {
     @inline(__always) @discardableResult
     static func appear<V: UIViewController>(
         _ controller: V, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line, identifier: String? = nil
@@ -82,3 +87,4 @@ public extension Printable {
         return p("- Disappear - \(type(of: controller))", module: module, file: file, function: function, line: line, identifier: identifier)(.jump)
     }
 }
+#endif

@@ -14,11 +14,10 @@
 
 By using the types provided by the framework, or custom management classes, you can quickly build your own logging component.
 
-## Prerequisites
+## Requirements
 
-- Devices running **iOS 10** and above.
-- Compiled with **Xcode 10** and above.
-- **Swift 5.0** and above.
+- iOS 10.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+
+- Swift 5.0+
 
 ## Install
 
