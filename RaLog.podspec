@@ -33,6 +33,6 @@ Pod::Spec.new do |s|
   
   s.module_name      = 'RaLog'
   
-  s.source_files     = 'Sources/*'
+  s.source_files     = 'Sources/**/*.swift'
   
 end
