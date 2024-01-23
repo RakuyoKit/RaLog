@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "RaLog",
     platforms: [
-        .iOS(.v10),
+        .iOS(.v12),
         .macOS(.v10_14),
         .tvOS(.v12),
         .watchOS(.v5),
