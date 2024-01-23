@@ -2,7 +2,7 @@
 //  Log.swift
 //  RaLog
 //
-//  Created by Rakuyo on 2020/09/01.
+//  Created by Rakuyo on 2020/9/1.
 //  Copyright © 2021 Rakuyo. All rights reserved.
 //
 

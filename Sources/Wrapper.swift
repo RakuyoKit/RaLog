@@ -2,7 +2,7 @@
 //  Wrapper.swift
 //  RaLog
 //
-//  Created by Rakuyo on 2021/08/23.
+//  Created by Rakuyo on 2021/8/23.
 //  Copyright © 2021 Rakuyo. All rights reserved.
 //
 
