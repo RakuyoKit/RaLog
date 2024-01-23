@@ -4,11 +4,18 @@ import PackageDescription
 
 let package = Package(
     name: "RaLog",
-    platforms: [.iOS(.v10), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
+    platforms: [.iOS(.v12), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
     products: [
-        .library(name: "RaLog", targets: ["RaLog"])
+        .library(
+            name: "RaLog",
+            targets: ["RaLog"]),
     ],
     targets: [
-        .target(name: "RaLog", path: "Sources")
+        .target(
+            name: "RaLog",
+            path: "Sources"),
+        .testTarget(
+            name: "RaLogTests",
+            dependencies: ["RaLog"]),
     ]
 )
