@@ -17,8 +17,9 @@
 
 ## 基本要求
 
-- iOS 12.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+
-- Swift 5.0+
+- iOS 12.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+ / visionOS 1.0+
+- Xcode 13.4+
+- Swift 5.6+
 
 ## 安装
 

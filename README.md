@@ -19,8 +19,9 @@ By using the types provided by the framework, or custom management classes, you 
 
 ## Requirements
 
-- iOS 12.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+
-- Swift 5.0+
+- iOS 12.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+ / visionOS 1.0+
+- Xcode 13.4+
+- Swift 5.6+
 
 ## Install
 
