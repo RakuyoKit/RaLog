@@ -17,7 +17,8 @@ let package = Package(
     targets: [
         .target(
             name: "RaLog",
-            path: "Sources"
+            path: "Sources",
+            resources: [.copy("PrivacyInfo.xcprivacy")]
         )
     ]
 )

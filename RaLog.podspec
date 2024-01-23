@@ -35,4 +35,6 @@ Pod::Spec.new do |s|
   
   s.source_files     = 'Sources/**/*.swift'
   
+  s.resource_bundles = { "RaLog" => ["Sources/PrivacyInfo.xcprivacy"] }
+  
 end
