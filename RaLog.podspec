@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   
   s.name             = 'RaLog'
   
-  s.version          = '1.5.5'
+  s.version          = '1.6.0'
   
   s.summary          = 'A logging framework.'
   
@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
   
   s.module_name      = 'RaLog'
   
-  s.source_files     = 'Sources/RaLog/*'
+  s.source_files     = 'Sources/*'
   
 end

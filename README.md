@@ -4,8 +4,9 @@
 
 <p align="center">
 <a><img src="https://img.shields.io/badge/language-swift-ffac45.svg"></a>
-<a href="https://github.com/RakuyoKit/RaLog/releases"><img src="https://img.shields.io/cocoapods/v/RaLog.svg"></a>
-<a href="https://github.com/RakuyoKit/RaLog/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/RaLog.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/RaLog"><img src="https://img.shields.io/github/v/tag/RakuyoKit/RaLog.svg?include_prereleases=&sort=semver"></a>
+<a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat"></a>
+<a href="https://raw.githubusercontent.com/RakuyoKit/RaLog/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-black"></a>
 </p>
 
 > [中文](https://github.com/RakuyoKit/RaLog/blob/master/README_CN.md)
@@ -14,11 +15,10 @@
 
 By using the types provided by the framework, or custom management classes, you can quickly build your own logging component.
 
-## Prerequisites
+## Requirements
 
-- Devices running **iOS 10** and above.
-- Compiled with **Xcode 10** and above.
-- **Swift 5.0** and above.
+- iOS 10.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+
+- Swift 5.0+
 
 ## Install
 

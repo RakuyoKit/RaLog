@@ -4,8 +4,9 @@
 
 <p align="center">
 <a><img src="https://img.shields.io/badge/language-swift-ffac45.svg"></a>
-<a href="https://github.com/RakuyoKit/RaLog/releases"><img src="https://img.shields.io/cocoapods/v/RaLog.svg"></a>
-<a href="https://github.com/RakuyoKit/RaLog/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/RaLog.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/RaLog"><img src="https://img.shields.io/github/v/tag/RakuyoKit/RaLog.svg?include_prereleases=&sort=semver"></a>
+<a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat"></a>
+<a href="https://raw.githubusercontent.com/RakuyoKit/RaLog/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-black"></a>
 </p>
 
 `RaLog` 是一个轻量级的，高可定制度的，面向协议的日志框架。
@@ -14,9 +15,8 @@
 
 ## 基本要求
 
-- 运行 **iOS 10** 及以上版本的设备。
-- 使用 **Xcode 10** 及以上版本编译。
-- **Swift 5.0** 以及以上版本。
+- iOS 10.0+ / macOS 10.14+ / tvOS 12.0+ / watchOS 5.0+
+- Swift 5.0+
 
 ## 安装
 
