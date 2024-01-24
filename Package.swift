@@ -16,6 +16,7 @@ let package = Package(
             path: "Sources"),
         .testTarget(
             name: "RaLogTests",
-            dependencies: ["RaLog"]),
+            dependencies: ["RaLog"],
+            path: "Tests"),
     ]
 )

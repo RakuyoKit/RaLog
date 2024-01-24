@@ -1,4 +1,4 @@
-// swift-tools-version:5.9
+// swift-tools-version: 5.9
 
 import PackageDescription
 
@@ -19,7 +19,6 @@ let package = Package(
     targets: [
         .target(
             name: "RaLog",
-            path: "Sources",
             resources: [.copy("PrivacyInfo.xcprivacy")]),
         .testTarget(
             name: "RaLogTests",
