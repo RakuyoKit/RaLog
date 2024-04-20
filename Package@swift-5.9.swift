@@ -6,7 +6,7 @@ let package = Package(
     name: "RaLog",
     platforms: [
         .iOS(.v12),
-        .macOS(.v10_14),
+        .macOS(.v10_13),
         .tvOS(.v12),
         .watchOS(.v5),
         .visionOS(.v1)
