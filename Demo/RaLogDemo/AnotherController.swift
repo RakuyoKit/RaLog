@@ -6,8 +6,10 @@
 //  Copyright © 2024 Rakuyo. All rights reserved.
 //
 
-import UIKit
 import RaLog
+import UIKit
+
+// MARK: - AnotherController
 
 class AnotherController: UIViewController {
     

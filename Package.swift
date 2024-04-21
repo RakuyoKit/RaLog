@@ -8,16 +8,19 @@ let package = Package(
     products: [
         .library(
             name: "RaLog",
-            targets: ["RaLog"]),
+            targets: ["RaLog"]
+        ),
     ],
     targets: [
         .target(
             name: "RaLog",
-            path: "Sources"),
+            path: "Sources"
+        ),
         .testTarget(
             name: "RaLogTests",
             dependencies: ["RaLog"],
-            path: "Tests"),
+            path: "Tests"
+        ),
     ]
 )
 

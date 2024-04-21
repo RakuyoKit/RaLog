@@ -6,11 +6,12 @@
 //  Copyright © 2024 Rakuyo. All rights reserved.
 //
 
-import UIKit
 import RaLog
+import UIKit
+
+// MARK: - ViewController
 
 class ViewController: UITableViewController {
-    
     /// ViewModel
     private lazy var viewModel = ViewModel()
     
@@ -22,7 +23,8 @@ class ViewController: UITableViewController {
 // MARK: - The life cycle
 
 extension ViewController {
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle { .default }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,7 @@ extension ViewController {
         Log.debug("Note the output of the console")
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -51,16 +53,13 @@ extension ViewController {
         
         Log.disappear(self)
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle { .default }
 }
 
 // MARK: - UITableViewDelegate
 
 extension ViewController {
     
-    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dataSource = viewModel.dataSource[indexPath.section].dataSource
         
         let tuple = dataSource[indexPath.row].action(indexPath)
@@ -84,20 +83,19 @@ extension ViewController {
 
 extension ViewController {
     
-    open override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.dataSource[section].title
+    override open func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
+        viewModel.dataSource[section].title
     }
     
-    open override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.dataSource.count
+    override open func numberOfSections(in _: UITableView) -> Int {
+        viewModel.dataSource.count
     }
     
-    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataSource[section].dataSource.count
+    override open func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.dataSource[section].dataSource.count
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         
         let dataSource = viewModel.dataSource[indexPath.section].dataSource

@@ -10,11 +10,12 @@ import UIKit
 
 import RaLog
 
+// MARK: - ViewModel
+
 class ViewModel {
     
     /// List data source
     lazy var dataSource: [SectionDataSource] = [
-        
         SectionDataSource(title: "Basic", dataSource: [
             DataSource(title: "Request an api that will succeed") { _ in
                 self.request(needSuccess: true, callback: { _ in })
@@ -31,18 +32,18 @@ class ViewModel {
             DataSource(title: "Request multiple requests") { _ in
                 self.requestMultipleRequests()
                 return (nil, false)
-            }
+            },
         ]),
         
         SectionDataSource(title: "Switch controller", dataSource: [
             DataSource(title: "Push another controller") { _ in
                 
-                return (AnotherController(), true)
+                (AnotherController(), true)
             },
             DataSource(title: "Present another controller") { _ in
                 
-                return (UINavigationController(rootViewController: AnotherController()), false)
-            }
+                (UINavigationController(rootViewController: AnotherController()), false)
+            },
         ]),
         
         SectionDataSource(title: "Custom Log", dataSource: [
@@ -63,13 +64,16 @@ class ViewModel {
                 Logger.note("Please note the changes in [Module]", module: "RaLog_Demo")
                 
                 return (nil, false)
-            }
+            },
         ]),
         
         SectionDataSource(title: "Filter", dataSource: [
             DataSource(title: "Filter logs identified by debug") { _ in
                 
-                Log.warning("The log with the debug flag will be filtered, and all future logs with the debug flag will not be printed on the console")
+                Log
+                    .warning(
+                        "The log with the debug flag will be filtered, and all future logs with the debug flag will not be printed on the console"
+                    )
                 Log.addFilter(flag: .debug)
                 Log.debug("This log will not be printed on the console, so you will not see it")
                 
@@ -84,12 +88,18 @@ class ViewModel {
             },
             DataSource(title: "Filter the logs of the current page") { _ in
                 
-                Log.warning("About to filter the logs of the current page, all the logs of the current page will not be output in the console")
+                Log
+                    .warning(
+                        "About to filter the logs of the current page, all the logs of the current page will not be output in the console"
+                    )
                 
                 Log.fileterCurrentFileLogs()
                 
                 Log.debug("This log will not be printed on the console, so you will not see it")
-                Logger.note("Unless another log manager is used to print logs (variables used to store filter conditions are not shared among each log manager)")
+                Logger
+                    .note(
+                        "Unless another log manager is used to print logs (variables used to store filter conditions are not shared among each log manager)"
+                    )
                 
                 return (nil, false)
             },
@@ -98,12 +108,11 @@ class ViewModel {
         SectionDataSource(title: "Store", dataSource: [
             DataSource(title: "Read today's disk cache") { _ in
                 
-                return (LogListViewController(logs: Log.readLogFromDisk()), true)
+                (LogListViewController(logs: Log.readLogFromDisk()), true)
             },
             DataSource(title: "Clear today's disk cache") { _ in
                 
                 switch Log.removeLogFromDisk() {
-                    
                 case .success:
                     Log.success("Clear the cache successfully")
                     
@@ -115,15 +124,15 @@ class ViewModel {
             },
             DataSource(title: "Read yesterday's disk cache") { _ in
                 
-                return (LogListViewController(logs: Log.readLogFromDisk(days: 1)), true)
+                (LogListViewController(logs: Log.readLogFromDisk(days: 1)), true)
             },
         ]),
     ]
 }
 
-private extension ViewModel {
+extension ViewModel {
     
-    enum RequestError: Error {
+    fileprivate enum RequestError: Error {
         case test
     }
     
@@ -132,15 +141,12 @@ private extension ViewModel {
     /// - Parameters:
     ///   - needSuccess: Whether the request should succeed
     ///   - callback: Callback request result
-    func request(needSuccess: Bool, callback: @escaping (Result<String, Error>) -> Void) {
-        
+    private func request(needSuccess: Bool, callback: @escaping (Result<String, Error>) -> Void) {
         Log.warning("Please note that the api will be requested soon! 😎")
         
         // Analog api request
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            
             if needSuccess {
-                
                 let content = "api request succeeded"
                 
                 Log.success("request success 🥳, content: \(content)")
@@ -148,7 +154,6 @@ private extension ViewModel {
                 callback(.success(content))
                 
             } else {
-                
                 let error = RequestError.test
                 
                 Log.error("request failure 😢, error: \(error)")
@@ -163,21 +168,18 @@ private extension ViewModel {
     /// - Parameters:
     ///   - index: Where the request was made
     ///   - callback: Callback request result
-    func requestRandom(at index: IndexPath, callback: @escaping (Result<String, Error>) -> Void) {
-        
+    private func requestRandom(at index: IndexPath, callback: @escaping (Result<String, Error>) -> Void) {
         Log.warning("Please note that an api with random results will be requested! 👻")
         
         // Analog api request
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            
             let value = index.section + index.row
             
-            let random = value + Int(arc4random_uniform(UInt32(100 + 1 - value)))
-            
+            let random = value + Int.random(in: 0 ... (100 - value))
+
             let result = random % value
             
             if result != 0 {
-                
                 let content = "\(random) % \(value) = \(result). And \(result) != 0, so api request succeeded"
                 
                 Log.success("request success 🥳, content: \(content)")
@@ -185,7 +187,6 @@ private extension ViewModel {
                 callback(.success(content))
                 
             } else {
-                
                 let error = RequestError.test
                 
                 Log.error("request failure 😢, \(random) % \(value) = \(result). And \(result) == 0, error: \(error)")
@@ -195,10 +196,8 @@ private extension ViewModel {
         }
     }
     
-    func requestMultipleRequests() {
-        
+    private func requestMultipleRequests() {
         func _emulate(log content: String, after: Int) {
-            
             DispatchQueue.global().async {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(after)) {
                     Log.debug(content)
