@@ -20,11 +20,13 @@ let package = Package(
     targets: [
         .target(
             name: "RaLog",
-            resources: [.copy("PrivacyInfo.xcprivacy")]
+            path: "Sources/Core",
+            resources: [.copy("../PrivacyInfo.xcprivacy")]
         ),
         .testTarget(
             name: "RaLogTests",
-            dependencies: ["RaLog"]
+            dependencies: ["RaLog"],
+            path: "Tests"
         ),
     ]
 )

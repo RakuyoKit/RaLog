@@ -19,7 +19,7 @@ let package = Package(
     targets: [
         .target(
             name: "RaLog",
-            path: "Sources"
+            path: "Sources/Core"
         ),
         .testTarget(
             name: "RaLogTests",
