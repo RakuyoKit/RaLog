@@ -8,10 +8,12 @@
 
 import Foundation
 
-// MARK: - Protocol
+// MARK: - Filterable
 
-/// Provide a way to filter logs. 
+/// Provide a way to filter logs.
 public protocol Filterable {
+    // swiftlint:disable type_contents_order
+
     /// Actually responsible for filtering the log.
     ///
     /// The default implementation:
@@ -57,14 +59,16 @@ public protocol Filterable {
     ///
     /// - Parameter file: file path. In the default implementation, a parameter tag of `file = #file` is added.
     static func fileterCurrentFileLogs(_ file: String)
+
+    // swiftlint:enable type_contents_order
 }
 
 // MARK: - Default
 
-public extension Filterable {
+extension Filterable {
     @inline(__always)
-    static func filter(_ log: LogModelProtocol) -> Bool {
-        return filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
+    public static func filter(_ log: LogModelProtocol) -> Bool {
+        filteredFiles.contains(log.file) || filteredFlags.contains(log.flag)
     }
 }
 
@@ -72,8 +76,8 @@ public extension Filterable {
 
 private let flagLock = NSLock()
 
-public extension Filterable {
-    static var filteredFlags: Set<Log.Flag> {
+extension Filterable {
+    public static var filteredFlags: Set<Log.Flag> {
         get {
             flagLock.lock()
             defer { flagLock.unlock() }
@@ -86,12 +90,12 @@ public extension Filterable {
         }
     }
     
-    static func addFilter(flag: Log.Flag ...) {
-        flag.forEach { filteredFlags.insert($0) }
+    public static func addFilter(flag: Log.Flag ...) {
+        for item in flag { filteredFlags.insert(item) }
     }
     
-    static func removeFilter(flag: Log.Flag ...) {
-        flag.forEach { filteredFlags.remove($0) }
+    public static func removeFilter(flag: Log.Flag ...) {
+        for item in flag { filteredFlags.remove(item) }
     }
 }
 
@@ -99,8 +103,8 @@ public extension Filterable {
 
 private let fileLock = NSLock()
 
-public extension Filterable {
-    static var filteredFiles: Set<String> {
+extension Filterable {
+    public static var filteredFiles: Set<String> {
         get {
             fileLock.lock()
             defer { fileLock.unlock() }
@@ -113,7 +117,7 @@ public extension Filterable {
         }
     }
     
-    static func fileterCurrentFileLogs(_ file: String = #file) {
+    public static func fileterCurrentFileLogs(_ file: String = #file) {
         let fileName = Log("", file: file, function: "", line: 0, flag: Log.Flag(""), module: "").file
         filteredFiles.insert(fileName)
     }

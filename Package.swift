@@ -4,18 +4,32 @@ import PackageDescription
 
 let package = Package(
     name: "RaLog",
-    platforms: [.iOS(.v12), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
+    platforms: [
+        .iOS(.v12),
+        .macOS(.v10_13),
+        .tvOS(.v12),
+        .watchOS(.v5),
+    ],
     products: [
         .library(
             name: "RaLog",
-            targets: ["RaLog"]),
+            targets: ["RaLog"]
+        ),
     ],
     targets: [
         .target(
             name: "RaLog",
-            path: "Sources"),
+            path: "Sources"
+        ),
         .testTarget(
             name: "RaLogTests",
-            dependencies: ["RaLog"]),
+            dependencies: ["RaLog"],
+            path: "Tests"
+        ),
     ]
 )
+
+#if swift(>=5.6)
+// Add the Rakuyo Swift formatting plugin if possible
+package.dependencies.append(.package(url: "https://github.com/RakuyoKit/swift.git", from: "1.1.2"))
+#endif

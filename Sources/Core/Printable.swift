@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Protocol
+// MARK: - Printable
 
 /// Provide a way to format the data and output the formatted content to the console.
 public protocol Printable {
@@ -39,10 +39,10 @@ public protocol Printable {
 
 // MARK: - Default
 
-public extension Printable {
+extension Printable {
     @inline(__always)
-    static func format(_ log: LogModelProtocol) -> String {
-        return """
+    public static func format(_ log: LogModelProtocol) -> String {
+        """
         
         [↓ In `\(log.function)` of \(log.file):\(log.line) ↓]
         [\(log.module)] \(log.formatTime) <\(log.flag)> : \(log.safeLog)
@@ -51,13 +51,14 @@ public extension Printable {
     }
     
     @inline(__always) @discardableResult
-    static func print<T: LogModelProtocol>(_ log: T) -> T {
+    public static func print<T: LogModelProtocol>(_ log: T) -> T {
         #if DEBUG
         // 1. store format log
-        log.logedStr = self.format(log)
+        log.logedStr = format(log)
         
         // 2. filter
         if let filterable = self as? Filterable.Type, _slowPath(filterable.filter(log)) { /* do nothing */ } else {
+            // swiftlint:disable:next no_direct_standard_out_logs
             Swift.print(log.logedStr)
         }
         

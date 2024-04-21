@@ -9,9 +9,9 @@
 #if canImport(WebKit)
 import WebKit
 
-extension WKWebView: RaLogCompatible {}
+extension WKWebView: RaLogCompatible { }
 
-public extension RaLogWrapper where Base: WKWebView {
+extension RaLogWrapper where Base: WKWebView {
     /// Add script to WKWebView for intercepting `console.log`.
     ///
     /// When the post closure is `nil` (default), the following method will be used to pass data to the native:
@@ -28,7 +28,7 @@ public extension RaLogWrapper where Base: WKWebView {
     ///   - post: Used to control how WebView passes logs to the native.
     ///   - injectionTime: When the script should be injected. Default is `.atDocumentEnd`
     ///   - isForMainFrameOnly: Whether the script should be injected into all frames or just the main frame. Default is `false`
-    func addCaptureLogsScript(
+    public func addCaptureLogsScript(
         post: ((_ param: String) -> String)? = nil,
         injectionTime: WKUserScriptInjectionTime = .atDocumentEnd,
         isForMainFrameOnly: Bool = false
@@ -46,20 +46,21 @@ public extension RaLogWrapper where Base: WKWebView {
     }
 }
 
-public extension Log.Flag {
-    static let javascript : Log.Flag = "🔥 Javascript"
+extension Log.Flag {
+    public static let javascript: Log.Flag = "🔥 Javascript"
 }
 
-public extension Printable {
+extension Printable {
     @inline(__always) @discardableResult
-    static func javascript(
-        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line, identifier: String? = nil
+    public static func javascript(
+        _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line,
+        identifier: String? = nil
     ) -> Log {
         let _log = {
-            return p($0, module: module, file: $1, function: function, line: $2, identifier: identifier)(.javascript)
+            p($0, module: module, file: $1, function: function, line: $2, identifier: identifier)(.javascript)
         }
         
-        guard let param = kLog as? [String : String], let content = param["content"] else {
+        guard let param = kLog as? [String: String], let content = param["content"] else {
             return _log(kLog, file, line)
         }
         
