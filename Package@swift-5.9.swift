@@ -9,19 +9,25 @@ let package = Package(
         .macOS(.v10_13),
         .tvOS(.v12),
         .watchOS(.v5),
-        .visionOS(.v1)
+        .visionOS(.v1),
     ],
     products: [
         .library(
             name: "RaLog",
-            targets: ["RaLog"]),
+            targets: ["RaLog"]
+        ),
     ],
     targets: [
         .target(
             name: "RaLog",
-            resources: [.copy("PrivacyInfo.xcprivacy")]),
+            resources: [.copy("PrivacyInfo.xcprivacy")]
+        ),
         .testTarget(
             name: "RaLogTests",
-            dependencies: ["RaLog"]),
+            dependencies: ["RaLog"]
+        ),
     ]
 )
+
+// Add the Rakuyo Swift formatting plugin
+package.dependencies.append(.package(url: "https://github.com/RakuyoKit/swift.git", from: "1.1.2"))

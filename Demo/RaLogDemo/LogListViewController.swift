@@ -6,27 +6,28 @@
 //  Copyright © 2024 Rakuyo. All rights reserved.
 //
 
-import UIKit
 import RaLog
-
-import Then
 import SnapKit
+import Then
+import UIKit
+
+// MARK: - LogListViewController
 
 class LogListViewController: UITableViewController {
+    private let logs: [Log]
+    
+    private lazy var label = UILabel().then {
+        $0.text = "Empty Data"
+    }
     
     init(logs: [Log]?) {
         self.logs = logs ?? []
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private let logs: [Log]
-    
-    private lazy var label = UILabel().then {
-        $0.text = "Empty Data"
     }
     
     deinit {
@@ -46,7 +47,6 @@ extension LogListViewController {
         tableView.tableFooterView = UIView()
         
         if logs.isEmpty {
-            
             view.addSubview(label)
             
             label.snp.makeConstraints {
@@ -58,7 +58,6 @@ extension LogListViewController {
             label.setContentHuggingPriority(.required, for: .horizontal)
             
         } else {
-            
             tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 100
             
@@ -83,20 +82,18 @@ extension LogListViewController {
 
 extension LogListViewController {
     
-    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return logs.count
+    override open func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        logs.count
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         
         cell.textLabel?.do {
-            
             var string = logs[indexPath.row].logedStr
             
             if string.hasPrefix("\n") { string.removeFirst() }
-            if string.hasSuffix("\n") { string.removeLast()  }
+            if string.hasSuffix("\n") { string.removeLast() }
             
             $0.text = string
             $0.numberOfLines = 0
@@ -107,4 +104,3 @@ extension LogListViewController {
         return cell
     }
 }
-
