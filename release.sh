@@ -54,7 +54,7 @@ release(){
     git checkout -b "$release_branch" "$source_branch"
 
     git_message="release: version $version"
-    git add . && git commit -m "$git_message" --no-verify
+    git add . && git commit -m "$git_message" --no-verify --allow-empty
 
     git_merge "$release_branch" "$main_branch" "Merge branch '$release_branch'"
 
