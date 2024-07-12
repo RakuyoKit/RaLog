@@ -40,13 +40,10 @@ public protocol Storable {
 
     /// The full path of the log storage file on the disk.
     ///
-    /// The default storage path of RaLog is as follows (log is stored in days),
-    /// and you can customize the storage path through this attribute.
+    /// Default behavior: 
+    /// Stores to `.documentDirectory` in `DEBUG` mode, and to `.applicationSupportDirectory` in other modes
     ///
-    /// ```swift
-    /// let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/"
-    /// let fileFullPath = dirPath + "log/\(date).log"
-    /// ```
+    /// You can customize the storage path through this attribute.
     static var filePath: String { get }
 
     /// Store log.
@@ -258,7 +255,14 @@ extension Storable {
     public static var storageMode: StorageMode { .all }
 
     private static var dirPath: String {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+        let domains: FileManager.SearchPathDirectory = {
+            #if DEBUG
+            .documentDirectory
+            #else
+            .applicationSupportDirectory
+            #endif
+        }()
+        let path = NSSearchPathForDirectoriesInDomains(domains, .userDomainMask, true).first
         return path.flatMap { $0 + "/log" } ?? ""
     }
 
