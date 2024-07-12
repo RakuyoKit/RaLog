@@ -42,7 +42,7 @@ extension Printable {
     ) -> Log {
         p(kLog, module: module, file: file, function: function, line: line, identifier: identifier)(.debug)
     }
-    
+
     @inline(__always) @discardableResult
     public static func warning(
         _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line,
@@ -50,7 +50,7 @@ extension Printable {
     ) -> Log {
         p(kLog, module: module, file: file, function: function, line: line, identifier: identifier)(.warning)
     }
-    
+
     @inline(__always) @discardableResult
     public static func success(
         _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line,
@@ -58,7 +58,7 @@ extension Printable {
     ) -> Log {
         p(kLog, module: module, file: file, function: function, line: line, identifier: identifier)(.success)
     }
-    
+
     @inline(__always) @discardableResult
     public static func error(
         _ kLog: Any?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line,
@@ -66,7 +66,7 @@ extension Printable {
     ) -> Log {
         p(kLog, module: module, file: file, function: function, line: line, identifier: identifier)(.error)
     }
-    
+
     @inline(__always) @discardableResult
     public static func `deinit`(
         _ obj: AnyObject?, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line,
@@ -102,7 +102,7 @@ extension Printable {
             identifier: identifier
         )(.jump)
     }
-    
+
     @inline(__always) @discardableResult
     public static func disappear<V: UIViewController>(
         _ controller: V, module: Log.Module? = nil, file: String = #file, function: String = #function, line: Int = #line,

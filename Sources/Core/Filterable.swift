@@ -25,9 +25,9 @@ public protocol Filterable {
     /// - Parameter log: Log that judged whether they need to be filtered.
     /// - Returns: Return `true` to prohibit printing.
     static func filter(_ log: LogModelProtocol) -> Bool
-    
+
     // MARK: - Filter Flag
-    
+
     /// Used to store the `Log.Flag` that needs to be filtered.
     ///
     /// You can refer to the following implementation:
@@ -37,24 +37,24 @@ public protocol Filterable {
     /// public var filteredFlags: Set<Log.Flag> = [Log.Flag("A")] // Filter Log of A tag by default
     /// ```
     static var filteredFlags: Set<Log.Flag> { get set }
-    
+
     /// Filter a `Log.Flag`.
     ///
     /// - Parameter flag: `Log.Flag` filtered.
     static func addFilter(flag: Log.Flag ...)
-    
+
     /// Remove the filtering of a `Log.Flag`.
     ///
     /// - Parameter flag: `Log.Flag` whose filter is removed.
     static func removeFilter(flag: Log.Flag ...)
-    
+
     // MARK: - Filter File
-    
+
     /// Used to store the filtered file name.
     ///
     /// See the `fileterCurrentFileLogs()` method for details.
     static var filteredFiles: Set<String> { get set }
-    
+
     /// Used to filter all logs of the current page.
     ///
     /// - Parameter file: file path. In the default implementation, a parameter tag of `file = #file` is added.
@@ -89,11 +89,11 @@ extension Filterable {
             Wrapper.shared.filteredFlags = newValue
         }
     }
-    
+
     public static func addFilter(flag: Log.Flag ...) {
         for item in flag { filteredFlags.insert(item) }
     }
-    
+
     public static func removeFilter(flag: Log.Flag ...) {
         for item in flag { filteredFlags.remove(item) }
     }
@@ -116,7 +116,7 @@ extension Filterable {
             Wrapper.shared.filteredFiles = newValue
         }
     }
-    
+
     public static func fileterCurrentFileLogs(_ file: String = #file) {
         let fileName = Log("", file: file, function: "", line: 0, flag: Log.Flag(""), module: "").file
         filteredFiles.insert(fileName)

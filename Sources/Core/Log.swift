@@ -182,7 +182,6 @@ extension Log {
 
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
-
         dateFormatter.dateFormat = "HH:mm:ss:SSS"
 
         return dateFormatter

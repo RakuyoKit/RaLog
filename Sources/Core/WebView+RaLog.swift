@@ -59,20 +59,20 @@ extension Printable {
         let _log = {
             p($0, module: module, file: $1, function: function, line: $2, identifier: identifier)(.javascript)
         }
-        
+
         guard let param = kLog as? [String: String], let content = param["content"] else {
             return _log(kLog, file, line)
         }
-        
+
         guard let stack = param["stack"] else {
             return _log(content, file, line)
         }
-        
+
         let _sepStack = stack.components(separatedBy: "\n")[1].components(separatedBy: ":")
-        
+
         let _line = Int(_sepStack[2]) ?? line
         let _file = _sepStack[1].components(separatedBy: "/").last ?? file
-        
+
         return _log(content, _file, _line)
     }
 }

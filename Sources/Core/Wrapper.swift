@@ -12,15 +12,15 @@ import Foundation
 class Wrapper {
     /// Singleton object
     static let shared = Wrapper()
-    
+
     var logs: [LogModelProtocol] = []
-    
+
     var filteredFlags = Set<Log.Flag>()
-    
+
     var filteredFiles = Set<String>()
-    
+
     let cacheDateFormatter = DateFormatter()
-    
+
     init() {
         cacheDateFormatter.dateFormat = "yyyy_MM_dd"
     }
