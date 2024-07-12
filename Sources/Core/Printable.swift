@@ -18,7 +18,7 @@ public protocol Printable {
     /// - Returns: The formatted string can be printed directly.
     @inline(__always)
     static func format(_ log: LogModelProtocol) -> String
-    
+
     /// Print the `log` parameter.
     ///
     /// The default implementation:
@@ -43,31 +43,31 @@ extension Printable {
     @inline(__always)
     public static func format(_ log: LogModelProtocol) -> String {
         """
-        
+
         [↓ In `\(log.function)` of \(log.file):\(log.line) ↓]
         [\(log.module)] \(log.formatTime) <\(log.flag)> : \(log.safeLog)
-        
+
         """
     }
-    
+
     @inline(__always) @discardableResult
     public static func print<T: LogModelProtocol>(_ log: T) -> T {
         #if DEBUG
         // 1. store format log
         log.logedStr = format(log)
-        
+
         // 2. filter
         if let filterable = self as? Filterable.Type, _slowPath(filterable.filter(log)) { /* do nothing */ } else {
             // swiftlint:disable:next no_direct_standard_out_logs
             Swift.print(log.logedStr)
         }
-        
+
         // 3. store
         if let storable = self as? Storable.Type {
             storable.store(log)
         }
         #endif
-        
+
         // 4. return
         return log
     }

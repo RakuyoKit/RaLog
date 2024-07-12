@@ -14,10 +14,10 @@ import Foundation
 public struct StorageMode: OptionSet {
     /// Storage on disk.
     public static let disk = Self(rawValue: 1 << 0)
-    
+
     /// Cached on memory.
     public static let memory = Self(rawValue: 1 << 1)
-    
+
     /// `.disk` & `.memory`.
     public static let all: StorageMode = [.disk, .memory]
 
@@ -34,10 +34,10 @@ public struct StorageMode: OptionSet {
 public protocol Storable {
     /// Storage mode, the default is `.all`. Namely disk cache and memory cache.
     static var storageMode: StorageMode { get }
-    
+
     /// An array to store all logs. See the `store(_:)` method for details.
     static var logs: [LogModelProtocol] { get set }
-    
+
     /// The full path of the log storage file on the disk.
     ///
     /// The default storage path of RaLog is as follows (log is stored in days),
@@ -48,7 +48,7 @@ public protocol Storable {
     /// let fileFullPath = dirPath + "log/\(date).log"
     /// ```
     static var filePath: String { get }
-    
+
     /// Store log.
     ///
     /// The default implementation will do the following:
@@ -63,24 +63,26 @@ public protocol Storable {
     ///     The above operations are effective in both `DEBUG` and `RELEASE` modes. You can implement this method yourself to change this logic.
     ///
     /// - Parameter log: The `Log` to be stored.
-    static func store<T: LogModelProtocol>(_ log: T)
-    
+    static func store(_ log: some LogModelProtocol)
+
     /// Read the log data of the date corresponding to `logDate` cached in the disk.
     ///
     /// The default implementation realizes the function of reading the log data of the day by default by adding the default parameter of `logDate = Date()`.
     ///
     /// - Note:
-    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to read log data from the disk.
+    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, 
+    ///     it will still try to read log data from the disk.
     ///
     /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`.
     static func readLogFromDisk<T: LogModelProtocol>(logDate: Date) -> [T]?
-    
+
     /// Delete the log data of the date corresponding to `logDate` cached in the disk.
     ///
     /// The default implementation realizes the function of deleting the log data of the day by default by adding the default parameter of `logDate = Date()`.
     ///
     /// - Note:
-    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, it will still try to delete log data from the disk.
+    ///     The default implementation does not determine the `storageMode` attribute. 
+    ///     That is, when `storageMode` does not contain `.disk`, it will still try to delete log data from the disk.
     ///
     /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`.
     /// - Return: When the deletion is successful, it will return `.success(())`, otherwise it will return an error message.
@@ -93,10 +95,10 @@ public protocol Storable {
 public enum BreakStrategy {
     /// Will not interrupt the method early.
     case never
-    
+
     /// Method execution will be interrupted after `count` errors.
     case continuous(count: Int)
-    
+
     /// Method execution will be interrupted after accumulating `count` errors.
     case grandTotal(count: Int)
 }
@@ -114,7 +116,7 @@ extension Storable {
         let aTimeInterval = Date().timeIntervalSinceReferenceDate + Double(-days * 86_400)
         return readLogFromDisk(logDate: Date(timeIntervalSinceReferenceDate: aTimeInterval))
     }
-    
+
     /// Read logs at certain time points or time intervals.
     ///
     /// `days` can be a certain time interval (`ClosedRange<Int>`)
@@ -140,38 +142,38 @@ extension Storable {
     ) -> [[T]?]? where C.Element == Int {
         var logs: [[T]?] = []
         var failureCount = 0
-        
+
         for time in days.reversed() {
             let tmp: [T]? = readLogFromDisk(days: time)
-            
+
             switch strategy {
             case .never:
                 logs.append(tmp)
-                
+
             case .continuous(let count):
                 if let log = tmp {
                     logs.append(log)
                     failureCount = 0
-                    
+
                 } else {
                     failureCount += 1
                     if failureCount >= count { break }
                 }
-                
+
             case .grandTotal(let count):
                 if let log = tmp {
                     logs.append(log)
-                    
+
                 } else {
                     failureCount += 1
                     if failureCount >= count { break }
                 }
             }
         }
-        
+
         return logs.isEmpty ? nil : logs
     }
-    
+
     /// Delete logs at certain time points or time intervals.
     ///
     /// `days` can be a certain time interval (`ClosedRange<Int>`)
@@ -193,41 +195,41 @@ extension Storable {
         complete completeBlock: ((_ isComplete: Bool, Error?) -> Void)? = nil
     ) where T.Element == Int {
         defer { completeBlock?(true, nil) }
-        
+
         var failureCount = 0
-        
+
         for time in days {
             let aTimeInterval = Date().timeIntervalSinceReferenceDate + Double(-time * 86_400)
-            
+
             let result = removeLogFromDisk(logDate: Date(timeIntervalSinceReferenceDate: aTimeInterval))
-            
+
             switch strategy {
             case .never:
                 switch result {
                 case .success: break
                 case .failure(let error): completeBlock?(false, error)
                 }
-                
+
             case .continuous(let count):
                 switch result {
                 case .success:
                     // reset to 0
                     failureCount = 0
-                    
+
                 case .failure(let error):
                     failureCount += 1
                     completeBlock?(false, error)
-                    
+
                     if failureCount >= count { break }
                 }
-                
+
             case .grandTotal(let count):
                 switch result {
                 case .success: break
                 case .failure(let error):
                     failureCount += 1
                     completeBlock?(false, error)
-                    
+
                     if failureCount >= count { break }
                 }
             }
@@ -252,27 +254,27 @@ extension Storable {
             Wrapper.shared.logs = newValue
         }
     }
-    
+
     public static var storageMode: StorageMode { .all }
-    
+
     private static var dirPath: String {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         return path.flatMap { $0 + "/log" } ?? ""
     }
-    
+
     private static var fileName: String {
-        "\(cacheDateFormatter.string(from: Date())).log"
+        "\(cacheDateFormatter.string(from: .init())).log"
     }
-    
+
     public static var filePath: String { dirPath + "/" + fileName }
-    
-    public static func store<T: LogModelProtocol>(_ log: T) {
+
+    public static func store(_ log: some LogModelProtocol) {
         if storageMode.contains(.memory) {
             logs += [log]
         }
-        
+
         guard storageMode.contains(.disk) else { return }
-        
+
         guard
             let data = try? JSONEncoder().encode(log),
             var content = String(data: data, encoding: .utf8)
@@ -280,57 +282,61 @@ extension Storable {
             // If the encoding fails, it will not be written to the file.
             return
         }
-        
+
         content += ","
-        
+
         var isDirectory: ObjCBool = true
-        
+
         // Directory Exists
         if !FileManager.default.fileExists(atPath: dirPath, isDirectory: &isDirectory) {
             try? FileManager.default.createDirectory(atPath: dirPath, withIntermediateDirectories: true)
         }
-        
+
         isDirectory = false
-        
+
         // File Exists
         if !FileManager.default.fileExists(atPath: filePath, isDirectory: &isDirectory) {
             FileManager.default.createFile(atPath: filePath, contents: nil)
-            
+
             // Store as an array
             content = "[" + content
         }
-        
+
         guard
             let resultData = content.data(using: .utf8),
             let fileHandle = FileHandle(forWritingAtPath: filePath)
-        else { return }
-        
+        else {
+            return
+        }
+
         fileHandle.seekToEndOfFile()
-        
+
         // Write file in append form
         fileHandle.write(resultData)
-        
+
         fileHandle.closeFile()
     }
-    
+
     public static func readLogFromDisk<T: LogModelProtocol>(logDate: Date = Date()) -> [T]? {
         let filePath = dirPath + "/" + "\(cacheDateFormatter.string(from: logDate)).log"
-        
+
         guard
             let endData = "]".data(using: .utf8),
             let data = try? Data(contentsOf: URL(fileURLWithPath: filePath))
-        else { return nil }
-        
+        else {
+            return nil
+        }
+
         return try? JSONDecoder().decode([T].self, from: data + endData)
     }
-    
+
     public static func removeLogFromDisk(logDate: Date = Date()) -> Result<Void, Error> {
         do {
             let filePath = dirPath + "/" + "\(cacheDateFormatter.string(from: logDate)).log"
-            
+
             try FileManager.default.removeItem(atPath: filePath)
             return .success(())
-            
+
         } catch {
             return .failure(error)
         }
