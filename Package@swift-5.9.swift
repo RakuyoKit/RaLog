@@ -32,4 +32,4 @@ let package = Package(
 )
 
 // Add the Rakuyo Swift formatting plugin
-package.dependencies.append(.package(url: "https://github.com/RakuyoKit/swift.git", from: "1.2.1"))
+package.dependencies.append(.package(url: "https://github.com/RakuyoKit/swift.git", from: "1.2.2"))
