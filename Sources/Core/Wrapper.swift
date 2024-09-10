@@ -9,7 +9,7 @@
 import Foundation
 
 /// A wrapper container to provide default global storage support for other types.
-class Wrapper {
+final class Wrapper {
     /// Singleton object
     static let shared = Wrapper()
 
