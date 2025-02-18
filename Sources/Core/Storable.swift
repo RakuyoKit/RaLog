@@ -40,7 +40,7 @@ public protocol Storable {
 
     /// The full path of the log storage file on the disk.
     ///
-    /// Default behavior: 
+    /// Default behavior:
     /// Stores to `.documentDirectory` in `DEBUG` mode, and to `.applicationSupportDirectory` in other modes
     ///
     /// You can customize the storage path through this attribute.
@@ -67,7 +67,7 @@ public protocol Storable {
     /// The default implementation realizes the function of reading the log data of the day by default by adding the default parameter of `logDate = Date()`.
     ///
     /// - Note:
-    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`, 
+    ///     The default implementation does not determine the `storageMode` attribute. That is, when `storageMode` does not contain `.disk`,
     ///     it will still try to read log data from the disk.
     ///
     /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`.
@@ -78,7 +78,7 @@ public protocol Storable {
     /// The default implementation realizes the function of deleting the log data of the day by default by adding the default parameter of `logDate = Date()`.
     ///
     /// - Note:
-    ///     The default implementation does not determine the `storageMode` attribute. 
+    ///     The default implementation does not determine the `storageMode` attribute.
     ///     That is, when `storageMode` does not contain `.disk`, it will still try to delete log data from the disk.
     ///
     /// - Parameter logDate: Date of the log to be read. When an error occurs, it will return `nil`.
