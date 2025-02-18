@@ -18,7 +18,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/RakuyoKit/swift.git", from: "1.4.0")
+        .package(url: "https://github.com/RakuyoKit/swift.git", from: "1.4.0"),
     ],
     targets: [
         .target(

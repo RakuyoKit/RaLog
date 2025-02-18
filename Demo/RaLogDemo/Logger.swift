@@ -22,7 +22,7 @@ extension Printable {
     }
 }
 
-// MARK: - Logger
+// MARK: - DemoLogger
 
 enum DemoLogger: Printable, Storable, Filterable {
     static func format(_ log: LogModelProtocol) -> String {
