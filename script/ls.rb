@@ -32,7 +32,14 @@ namespace :lib do
                       main_branch
                     end
 
-    sh "git checkout -b #{release_branch} #{source_branch}"
+    if `git rev-parse --abbrev-ref HEAD`.strip != release_branch
+      if system("git show-branch #{release_branch} &>/dev/null")
+        sh "git checkout #{release_branch}"
+      else
+        sh "git checkout -b #{release_branch} #{source_branch}"
+      end
+    end
+
     git_message = "release: version #{version}"
     sh "git add . && git commit -m '#{git_message}' --no-verify --allow-empty"
 
@@ -51,7 +58,7 @@ namespace :lib do
   end
 
   def execute_pod(command, subcommand, name)
-    sh "pod #{command} #{subcommand} #{name}.podspec --allow-warnings --skip-tests"
+    sh mise_exec_prefix + " pod #{command} #{subcommand} #{name}.podspec --allow-warnings --skip-tests"
   end
 
   def has_develop_branch?
