@@ -18,6 +18,9 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     public typealias Flag = String
     public typealias Module = String
     
+    /// A global log formatter that can be set to customize log output.
+    public static var globalFormatter: ((_ log: LogModelProtocol) -> String)? = nil
+    
     /// Determines whether it is enabled.
     ///
     /// This switch controls all processes including printing, filtering, and saving.
@@ -137,6 +140,14 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
         } else {
             self.file = file
             self.module = module ?? Self.appName ?? "RaLog"
+        }
+    }
+    
+    public static func format(_ log: any LogModelProtocol) -> String {
+        if let formatter = globalFormatter {
+            formatter(log)
+        } else {
+            defaultFormat(log)
         }
     }
 }

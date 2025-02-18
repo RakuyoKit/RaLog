@@ -56,12 +56,7 @@ extension Printable {
     
     @inline(__always)
     public static func format(_ log: LogModelProtocol) -> String {
-        """
-
-        [↓ In `\(log.function)` of \(log.file):\(log.line) ↓]
-        [\(log.module)] \(log.formatTime) <\(log.flag)> : \(log.safeLog)
-
-        """
+        defaultFormat(log)
     }
 
     @inline(__always) @discardableResult
@@ -84,5 +79,19 @@ extension Printable {
 
         // 4. return
         return log
+    }
+}
+
+// MARK: - Logic
+
+extension Printable {
+    @inline(__always)
+    public static func defaultFormat(_ log: LogModelProtocol) -> String {
+        """
+
+        [↓ In `\(log.function)` of \(log.file):\(log.line) ↓]
+        [\(log.module)] \(log.formatTime) <\(log.flag)> : \(log.safeLog)
+
+        """
     }
 }
