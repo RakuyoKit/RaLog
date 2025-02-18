@@ -17,7 +17,19 @@ open class Log: LogModelProtocol, Printable, Storable, Filterable {
     /// Log identifier. RaLog uses this type to distinguish logs for different purposes.
     public typealias Flag = String
     public typealias Module = String
-
+    
+    /// Determines whether it is enabled.
+    ///
+    /// This switch controls all processes including printing, filtering, and saving.
+    /// See the default implementation of the `Printable.print(_:)` method for details.
+    public static var isEnabled: Bool = {
+        #if DEBUG
+        true
+        #else
+        false
+        #endif
+    }()
+    
     /// Cache the name of the currently running app.
     private static let appName: String? = {
         let _infoDic: [String: Any]? = {

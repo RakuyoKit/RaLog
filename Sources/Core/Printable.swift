@@ -12,6 +12,12 @@ import Foundation
 
 /// Provide a way to format the data and output the formatted content to the console.
 public protocol Printable {
+    /// Determines whether it is enabled.
+    ///
+    /// This switch controls all processes including printing, filtering, and saving.
+    /// See the default implementation of the `print(_:)` method for details.
+    static var isEnabled: Bool { get }
+    
     /// Used to format the `log` parameter.
     ///
     /// - Parameter log: The Log model contains all the information needed to print the Log. See `Log` for details.
@@ -40,6 +46,14 @@ public protocol Printable {
 // MARK: - Default
 
 extension Printable {
+    public static var isEnabled: Bool {
+        #if DEBUG
+        true
+        #else
+        false
+        #endif
+    }
+    
     @inline(__always)
     public static func format(_ log: LogModelProtocol) -> String {
         """
@@ -52,7 +66,8 @@ extension Printable {
 
     @inline(__always) @discardableResult
     public static func print<T: LogModelProtocol>(_ log: T) -> T {
-        #if DEBUG
+        guard isEnabled else { return log }
+        
         // 1. store format log
         log.logedStr = format(log)
 
@@ -66,7 +81,6 @@ extension Printable {
         if let storable = self as? Storable.Type {
             storable.store(log)
         }
-        #endif
 
         // 4. return
         return log
