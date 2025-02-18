@@ -49,19 +49,19 @@ class ViewModel {
         SectionDataSource(title: "Custom Log", dataSource: [
             DataSource(title: "Curry") { _ in
                 
-                Logger.p("Use currying call form")(.curry)
+                DemoLogger.p("Use currying call form")(.curry)
                 
                 return (nil, false)
             },
             DataSource(title: "Custom Flag") { _ in
                 
-                Logger.note("This log is identified by '<\(Log.Flag.note)>'")
+                DemoLogger.note("This log is identified by '<\(Log.Flag.note)>'")
                 
                 return (nil, false)
             },
             DataSource(title: "Set Module separately for a log") { _ in
                 
-                Logger.note("Please note the changes in [Module]", module: "RaLog_Demo")
+                DemoLogger.note("Please note the changes in [Module]", module: "RaLog_Demo")
                 
                 return (nil, false)
             },
@@ -96,7 +96,7 @@ class ViewModel {
                 Log.fileterCurrentFileLogs()
                 
                 Log.debug("This log will not be printed on the console, so you will not see it")
-                Logger
+                DemoLogger
                     .note(
                         "Unless another log manager is used to print logs (variables used to store filter conditions are not shared among each log manager)"
                     )
