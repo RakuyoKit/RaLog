@@ -5,14 +5,14 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RakuyoKit/swift.git",
       "state" : {
-        "revision" : "5d13a5fb69e44b637b3eee0f7761077bed29d6ee",
-        "version" : "1.4.0"
+        "branch" : "release/1.4.0",
+        "revision" : "9cb218a1d07839748c798f6f0427f1ef70610840"
       }
     },
     {
       "identity" : "swift-argument-parser",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "location" : "https://github.com/apple/swift-argument-parser",
       "state" : {
         "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
         "version" : "1.5.0"
